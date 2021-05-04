@@ -2,6 +2,12 @@ const { NavLink, withRouter } = ReactRouterDOM
 
 class _AppHeader extends React.Component {
 
+    toggleMenu= () => {
+        // document.body.classList.toggle('menu-open');
+        // TODO: Create menu toggler
+        console.log(`Menu toggler`)
+    }
+
     render() {
 
         return (
@@ -12,7 +18,7 @@ class _AppHeader extends React.Component {
                     </div>
 
                     <div>
-                        <span className="fas nav-hamburger"></span>
+                        <span className="fas nav-hamburger" onClick={this.toggleMenu}></span>
                         <ul className="nav-links-container clean-list">
                             <li><NavLink exact to="/">Home</NavLink></li>
                             <li><NavLink to="/mail">Mail</NavLink></li>
