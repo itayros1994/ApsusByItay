@@ -3,7 +3,8 @@ import { storageService } from '../...../services/storage-service.js'
 
 export const noteService = {
     query,
-    deleteNote
+    deleteNote,
+    changeNoteBgc
 }
 
 function query() {
@@ -16,11 +17,23 @@ if (!notes || !notes.length) {
 }
 
 function deleteNote(nId) {
-    const noteId = notes.findIndex(note => note.id === nId)
+    const noteId = _getNoteIdInNotes(nId)
     if (noteId !== -1) notes.splice(noteId, 1)
     _saveNotesToStorage()
 
     return Promise.resolve()
+}
+
+function changeNoteBgc(nId, color) {
+    const noteId = _getNoteIdInNotes(nId)
+    notes[noteId].style = {backgroundColor: color}
+    _saveNotesToStorage()
+
+    return Promise.resolve()
+}
+
+function _getNoteIdInNotes(id) {
+    return notes.findIndex(note => note.id === id)
 }
 
 function _saveNotesToStorage() {
