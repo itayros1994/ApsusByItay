@@ -10,7 +10,14 @@ let mails = [
 ]
 export const mailService = {
     mails,
-    deleteEmail
+    deleteEmail,
+    isEmailRead,
+    getMails
+
+}
+
+function getMails() {
+    return Promise.resolve(mails)
 }
 
 function deleteEmail(emailId) {
@@ -18,5 +25,13 @@ function deleteEmail(emailId) {
         return emailId === mail.id
     })
     mails.splice(emailIdx, 1)
+    return Promise.resolve()
+}
+
+function isEmailRead(emailId) {
+    var emailIdx = mails.findIndex(function(mail) {
+        return emailId === mail.id
+    })
+    mails[emailIdx].isRead = true
     return Promise.resolve()
 }

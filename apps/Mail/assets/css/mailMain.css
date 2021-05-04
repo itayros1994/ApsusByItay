@@ -1,19 +1,25 @@
 .emails-container {
-    border: 3px solid black;
-    font-size: 30px;
+    border: 5px solid rgb(0, 0, 0);
+    font-size: 40px;
+    height: 10rem;
+    background-color: rgb(231, 176, 73);
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 2%;
+    padding: 20px;
 }
 
 .email-container {
+    cursor: pointer;
     border: 3px solid black;
     font-size: 30px;
-    height: 75rem;
+    height: 100rem;
     margin: 5px;
 }
 
 .email {
     margin: 20px;
     border: 3px solid black;
-    height: 20rem;
+    height: 50rem;
     padding: 20px;
 }
 
@@ -22,4 +28,9 @@
     color: red;
     float: right;
     font-size: 60px;
+}
+
+.mails-filter {
+    font-size: 30px;
+    margin: 10px;
 }

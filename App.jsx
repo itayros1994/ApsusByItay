@@ -7,7 +7,8 @@ import { AboutUs } from './pages/AboutUs.jsx'
 import { Home } from './pages/Home.jsx'
 import { EmailList } from './apps/Mail/cmps/EmailList.jsx'
 import { EmailDetails } from './apps/Mail/cmps/EmailDetails.jsx'
-
+import {EmailApp} from './apps/Mail/pages/EmailApp.jsx'
+ 
 
 export function App() {
     return (
@@ -19,7 +20,7 @@ export function App() {
                     <Switch>
                         {/* MAIL ROUTES */}
                         <Route component={EmailDetails} path="/mail/:emailId" />
-                        <Route component={EmailList} path="/mail" />
+                        <Route component={EmailApp} path="/mail" />
                         
                         {/* KEEP ROUTES */}
                         <Route component={Notes} path="/notes" />
