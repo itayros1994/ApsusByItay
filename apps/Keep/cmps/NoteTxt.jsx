@@ -15,6 +15,13 @@ export class _NoteTxt extends React.Component {
             })
     }
 
+    handleBgcChange = (ev) => {
+        noteService.changeNoteBgc(this.props.note.id, ev.target.value)
+            .then(() => {
+                this.props.history.push('/notes')
+            })
+    }
+
 
     render() {
         const { id, info, style } = this.props.note
@@ -23,7 +30,10 @@ export class _NoteTxt extends React.Component {
             <div className="note-container" style={style}>
                 <button onClick={this.onDeleteNote}>X</button>
                 id: {id}<br />
-                txt: {info.txt}
+                txt: {info.txt}<br /><br />
+
+                Change BGC:
+                <input type="color" onChange={this.handleBgcChange} value="#fff" /><br />
             </div>
         )
     }

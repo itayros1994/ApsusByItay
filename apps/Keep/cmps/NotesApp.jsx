@@ -46,7 +46,7 @@ export class NoteApp extends React.Component {
         return (
             <section>
                 total notes: {this.state.notes.length}
-                <AddNote />
+                {/* <AddNote /> */}
                 {notes.map(note => {
                     return <NotePreview note={note} key={note.id} />
                 })}
