@@ -1,5 +1,7 @@
+import {mail} from '../apps/Mail/services/mailServise.js'
+
 export function Mail() {
     return (
-        <section>Mail</section>
+        <section>{console.log(mail)}</section>
     )
 }
