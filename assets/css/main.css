@@ -5,3 +5,5 @@
 @import './font-awsome.css';
 @import './cmps/navbar.css';
 @import './cmps/footer.css';
+
+@import '../../apps/Keep/assets/css/keep.css';

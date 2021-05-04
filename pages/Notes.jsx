@@ -1,5 +1,9 @@
+import { NoteApp } from '../apps/Keep/cmps/NotesApp.jsx'
+
 export function Notes() {
     return (
-        <section>Notes</section>
+        <React.Fragment>
+            <NoteApp />
+        </React.Fragment>
     )
 }

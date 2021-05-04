@@ -1,0 +1,27 @@
+.note-container{
+    border: 1px solid #111;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    padding: .5rem;
+}
+
+.notes-type-btn{
+    font-style: normal;
+}
+
+/* FONT AWSOME */
+.fa-text::before{
+    content: "\f031";
+}
+
+.fa-list::before{
+    content: "\f03a";
+}
+
+.fa-img::before{
+    content: "\f03e";
+}
+
+.fa-video::before{
+    content: "\f167";
+}
