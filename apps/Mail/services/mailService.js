@@ -1,0 +1,22 @@
+import { utilService } from '/util-service.js'
+import { storageService } from '/storage-service.js'
+
+let mails = [
+    { id: utilService.makeId(), subject: 'Wassap?', body: 'Oren Is King!!', isRead: false, sentAt: 1551133930594 },
+    { id: utilService.makeId(), subject: 'Wassap?', body: 'Itay is The Queen!', isRead: false, sentAt: 1551133930594 },
+    { id: utilService.makeId(), subject: 'Wassap?', body: 'Kaplan Is Bad Boy!', isRead: false, sentAt: 1551133930594 },
+    { id: utilService.makeId(), subject: 'Wassap?', body: 'CoperVaser is King', isRead: false, sentAt: 1551133930594 },
+    { id: utilService.makeId(), subject: 'Wassap?', body: 'Basya is Love!!', isRead: false, sentAt: 1551133930594 }
+]
+export const mailService = {
+    mails,
+    deleteEmail
+}
+
+function deleteEmail(emailId) {
+    var emailIdx = mails.findIndex(function(mail) {
+        return emailId === mail.id
+    })
+    mails.splice(emailIdx, 1)
+    return Promise.resolve()
+}
