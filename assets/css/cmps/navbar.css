@@ -2,7 +2,7 @@
 
 .main-nav-container {
   background-color: #111;
-  padding: .5rem;
+  padding: .5rem 1rem;
   margin-bottom: .5rem;
 }
 
@@ -45,6 +45,7 @@
   .nav-links-container {
     display: flex;
     gap: 1.5em;
+    padding: .5rem 0;
     font-family: Lato-Black;
   }
 
