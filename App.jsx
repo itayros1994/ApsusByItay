@@ -3,9 +3,10 @@ const { Route, Switch } = ReactRouterDOM
 import { AppHeader } from './cmps/AppHeader.jsx'
 import { AppFooter } from './cmps/AppFooter.jsx'
 import { Notes } from './pages/Notes.jsx'
-import { Mail } from './pages/Mail.jsx'
 import { AboutUs } from './pages/AboutUs.jsx'
 import { Home } from './pages/Home.jsx'
+import { EmailList } from './apps/Mail/cmps/EmailList.jsx'
+import { EmailDetails } from './apps/Mail/cmps/EmailDetails.jsx'
 
 
 export function App() {
@@ -16,10 +17,16 @@ export function App() {
 
                 <main className="container">
                     <Switch>
-                        <Route component={Mail} path="/mail" />
+                        {/* MAIL ROUTES */}
+                        <Route component={EmailDetails} path="/mail/:emailId" />
+                        <Route component={EmailList} path="/mail" />
+                        
+                        {/* KEEP ROUTES */}
                         <Route component={Notes} path="/notes" />
                         <Route component={AboutUs} path="/about" />
-                        <Route component={Home} path="/" />
+
+                        {/* APP ROUTES */}
+                        <Route component={Home} exact path="/" />
                     </Switch>
                 </main>
 
