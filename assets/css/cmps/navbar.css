@@ -1,0 +1,60 @@
+/* NAVBAR */
+
+.main-nav-container {
+  background-color: #111;
+  padding: .5rem;
+  margin-bottom: .5rem;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-family: Kanit-Bold;
+  letter-spacing: 2px;
+}
+
+.nav-logo a {
+  color: #eee;
+  text-decoration: none;
+}
+
+.nav-logo::after {
+  color: #21e700;
+  content: ".";
+}
+
+.nav-hamburger::before {
+  color: #eee;
+  cursor: pointer;
+  content: "\f0c9";
+}
+
+.nav-links-container{
+  display: none;
+}
+
+[aria-current="page"]{
+  color: purple !important;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 500px) {
+  .nav-hamburger {
+    display: none;
+  }
+
+  .nav-links-container {
+    display: flex;
+    gap: 1.5em;
+    font-family: Lato-Black;
+  }
+
+  .nav-links-container a {
+    color: white;
+    text-decoration: none;
+    transition: color ease-in-out 0.5s;
+  }
+
+  .nav-links-container a:hover {
+    color: #21e700;
+  }
+}

@@ -1,0 +1,15 @@
+/* BASE */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: pink;
+}
+
+.page-layout-container{
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
