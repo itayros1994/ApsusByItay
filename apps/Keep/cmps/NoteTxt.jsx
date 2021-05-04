@@ -1,4 +1,6 @@
 import { noteService } from '../../services/notes-service.js'
+import { NoteEditor } from './NoteEditor.jsx'
+
 
 const { withRouter } = ReactRouterDOM
 
@@ -15,25 +17,22 @@ export class _NoteTxt extends React.Component {
             })
     }
 
-    handleBgcChange = (ev) => {
-        noteService.changeNoteBgc(this.props.note.id, ev.target.value)
-            .then(() => {
-                this.props.history.push('/notes')
-            })
-    }
-
 
     render() {
-        const { id, info, style } = this.props.note
+        const { id, info, isPinned, style } = this.props.note
 
         return (
-            <div className="note-container" style={style}>
-                <button onClick={this.onDeleteNote}>X</button>
+            <div className="note-container">
+                <div className="note-preview-container" style={style}>
+                    <button onClick={this.onDeleteNote}>X</button>
                 id: {id}<br />
-                txt: {info.txt}<br /><br />
+                txt: {info.txt}<br />
+                isPinned: {JSON.stringify(isPinned)}
+                </div>
 
-                Change BGC:
-                <input type="color" onChange={this.handleBgcChange} value="#fff" /><br />
+                <div className="note-editor-container">
+                    <NoteEditor note={this.props.note} />
+                </div>
             </div>
         )
     }

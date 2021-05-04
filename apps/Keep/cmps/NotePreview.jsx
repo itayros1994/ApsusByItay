@@ -9,9 +9,9 @@ export class NotePreview extends React.Component {
 
         switch (this.noteType) {
             case 'NoteText':
-                return <NoteTxt  {...props} />
+                return <NoteTxt {...props} />
             case 'NoteImg':
-                return <NoteImg  {...props} />
+                return <NoteImg {...props} />
             case 'NoteTodos':
                 return <NoteTodos {...props} />
             case 'NoteVideo':
