@@ -18,6 +18,7 @@ export function App() {
                     <Switch>
                         <Route component={Mail} path="/mail" />
                         <Route component={Notes} path="/notes" />
+                        <div>oren gay!!</div>
                         <Route component={AboutUs} path="/about" />
                         <Route component={Home} path="/" />
                     </Switch>
