@@ -18,7 +18,7 @@ class _AppHeader extends React.Component {
                     </div>
 
                     <div>
-                        <span className="fas nav-hamburger" onClick={this.toggleMenu}></span>
+                        <span className="fas nav-grid-symbol" onClick={this.toggleMenu}></span>
                         <ul className="nav-links-container clean-list">
                             <li><NavLink exact to="/">Home</NavLink></li>
                             <li><NavLink to="/mail">Mail</NavLink></li>

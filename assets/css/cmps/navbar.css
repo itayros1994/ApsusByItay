@@ -22,10 +22,10 @@
   content: ".";
 }
 
-.nav-hamburger::before {
+.nav-grid-symbol::before {
   color: #eee;
   cursor: pointer;
-  content: "\f0c9";
+  content: "\f00a";
 }
 
 .nav-links-container{
@@ -38,7 +38,7 @@
 
 /* MEDIA QUERIES */
 @media screen and (min-width: 500px) {
-  .nav-hamburger {
+  .nav-grid-symbol {
     display: none;
   }
 
