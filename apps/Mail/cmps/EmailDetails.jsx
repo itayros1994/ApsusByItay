@@ -34,7 +34,7 @@ export class EmailDetails extends React.Component {
   render() {
     return <div className="email-container">
       <section className="email">
-        {this.state.currEmail} <span onClick={this.onDeleteMail} className="delete-email">X</span>
+        {this.state.currEmail} <span onClick={this.onDeleteMail} className="delete-email">X</span> 
       </section>
     </div>
   }
