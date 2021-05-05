@@ -1,39 +1,41 @@
 import { mailService } from '../services/mailService.js'
+const { Link } = ReactRouterDOM
 
 export class EmailDetails extends React.Component {
 
   state = {
-    currEmail: '',
-    emailId: null
-  }
-
-  componentDidMount() {
-    this.loadEmail()
-    console.log(mailService.mails)
+    // currEmail: '',
+    emailId: null,
+    replay: ''
   }
 
   onDeleteMail = () => {
     mailService.deleteEmail(this.state.currEmailId)
       .then(() => {
         this.props.history.push('/mail')
-        console.log('hey')
+        console.log(this.props.history)
       })
   }
 
-  loadEmail = () => {
-    const id = this.props.match.params.emailId
-    const mail = mailService.getMailById(id)
-    this.setState({ currEmail: mail })
+  onAddComment = () => {
+    mailService.addComment(this.props.match.params.emailId, this.state.replay)
   }
 
   render() {
-    if(!this.state.currEmail) return <div>'loading...'</div>
+    const currEmail = mailService.getMailById(this.props.match.params.emailId)
+    console.log(this.state.replay)
+    if (!currEmail) return <div>'loading...'</div>
     return <div className="email-container">
       <section className="email">
-        <div>{this.state.currEmail.body}</div> <span onClick={this.onDeleteMail} className="delete-email">X</span>
+        <div><Link className="back-mailbox" to={'/mail'}>Mail Box ➡</Link></div>
+        <div className="email-body">{currEmail.sendBy} :  {currEmail.body}</div>
+        <div> Replay : {currEmail.replays}</div>
+        <textarea value={this.state.replay} onChange={(ev) => this.setState({ replay: ev.target.value })} required placeholder="Replay Messege" name="textarea" rows="10" cols="20" >Write something here</textarea>
+        <button onClick={this.onAddComment}>Comment</button>
+        <button onClick={this.onDeleteMail} className="delete-email">Delete Email</button>
       </section>
     </div>
   }
 }
 
-
+// onChange={(ev) => this.setState({ body: ev.target.value })}

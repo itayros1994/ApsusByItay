@@ -1,102 +1,38 @@
-        .emails-container {
-            border: 5px solid rgb(0, 0, 0);
-            font-size: 30px;
-            height: 12rem;
-            background-color: rgb(236, 227, 211);
-            font-family: 'Times New Roman', Times, serif;
-            border-radius: 2%;
-            padding: 20px;
-            margin: 10px;
-        }
-        
-        .email-container {
-            cursor: pointer;
-            border: 3px solid black;
-            font-size: 30px;
-            height: 100rem;
-            margin: 5px;
-            background-color: rgb(90, 179, 145);
-        }
-        
-        .email-send-by {
-            font-size: 40px;
-        }
-        
-        .email-subject {
-            font-size: 30px;
-        }
-        
-        h1 {
-            font-size: 50px;
-            text-align: center;
-            background-color: rgb(151, 202, 92);
-            height: 100px;
-        }
-        
-        .email {
-            margin: 20px;
-            border: 3px solid black;
-            height: 50rem;
-            padding: 20px;
-        }
-        
-        .delete-email {
-            cursor: pointer;
-            color: red;
-            float: right;
-            font-size: 60px;
-        }
-        
-        .mails-filter {
-            font-size: 30px;
-            margin: 10px;
-        }
-        
-        .unread-mails {
-            margin: 10px;
-            font-size: 30px;
-            border: 3px solid black;
-            width: 200px;
-        }
-        /* Add Mail Section */
-        
-        .email-compose {
-            font-size: 40px;
-            border: black 5px solid;
-        }
-        
-        .add-email {
-            margin: 100px;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: 88%;
-            align-content: space-around;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            align-items: stretch;
-        }
-        
-        input {
-            font-size: 20px;
-            padding: 20px;
-        }
-        
-        textarea {
-            font-size: 20px;
-            height: 600px;
-        }
-        
-        .add-new-mail-title {
-            text-align: center;
-            font-size: 80px;
-            margin: 20px;
-        }
-        
-        button {
-            width: 250px;
-            height: 40px;
-            text-align: center;
-            margin: auto;
-            padding: 10px;
-        }
+@import url(emailCompose.css);
+@import url(emailDetails.css);
+@import url(emailFilter.css);
+@import url(emailList.css);
+@import url(emailPreview.css);
+@import url(emailStatus.css);
+
+/* Add Mail Section */
+
+
+/* .page-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+.page-content-container {
+    display: flex;
+} */
+
+.input-detail {
+    font-size: 20px;
+    padding: 20px;
+}
+
+.textarea-detail {
+    font-size: 20px;
+    height: 600px;
+}
+
+.button-detail {
+    width: 250px;
+    height: 40px;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+}

@@ -1,0 +1,39 @@
+.email-container {
+    display: flex;
+    cursor: pointer;
+    font-size: 30px;
+    height: 50rem;
+    margin: 5px;
+    background-color: rgb(197, 209, 208);
+}
+
+.email {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px;
+    height: 40rem;
+    width: 90rem;
+    padding: 20px;
+    margin: 50px;
+    border: 1px solid black;
+}
+
+.delete-email {
+    cursor: pointer;
+    color: red;
+    font-size: 30px;
+    width: 90%;
+    margin: 35px;
+}
+
+.back-mailbox {
+    float: right;
+    border: 3px solid black;
+    border-radius: 20px;
+}
+
+.email-body {
+    background-color: rgb(170, 145, 145);
+    border: 2px solid black;
+}

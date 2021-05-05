@@ -1,29 +1,35 @@
 /* TYPOGRAPHY */
 
+
 /* FONT AWSOME */
+
 @font-face {
-  font-family: fa-brands;
-  src: url("../fonts/font-awesome/fa-brands.woff");
+    font-family: fa-brands;
+    src: url("../fonts/font-awesome/fa-brands.woff");
 }
 
 @font-face {
-  font-family: fa-regular;
-  src: url("../fonts/font-awesome/fa-regular.woff");
+    font-family: fa-regular;
+    src: url("../fonts/font-awesome/fa-regular.woff");
 }
 
 @font-face {
-  font-family: fa-solid;
-  src: url("../fonts/font-awesome/fa-solid.woff");
+    font-family: fa-solid;
+    src: url("../fonts/font-awesome/fa-solid.woff");
 }
+
 
 /* LOGO font */
+
 @font-face {
-  font-family: Kanit-Bold;
-  src: url("../fonts/Kanit-Bold.ttf");
+    font-family: Kanit-Bold;
+    src: url("../fonts/Kanit-Bold.ttf");
 }
 
+
 /* NAVBAR LINKS font */
+
 @font-face {
-  font-family: Lato-Black;
-  src: url("../fonts/Lato-BlackItalic.ttf");
+    font-family: Lato-Black;
+    src: url("../fonts/Lato-BlackItalic.ttf");
 }

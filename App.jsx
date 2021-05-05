@@ -7,9 +7,9 @@ import { AboutUs } from './pages/AboutUs.jsx'
 import { Home } from './pages/Home.jsx'
 import { EmailList } from './apps/Mail/cmps/EmailList.jsx'
 import { EmailDetails } from './apps/Mail/cmps/EmailDetails.jsx'
-import {EmailApp} from './apps/Mail/Pages/EmailApp.jsx'
-import {EmailCompose} from './apps/Mail/cmps/EmailCompose.jsx'
- 
+import { EmailApp } from './apps/Mail/Pages/EmailApp.jsx'
+import { EmailCompose } from './apps/Mail/cmps/EmailCompose.jsx'
+
 
 export function App() {
     return (
@@ -24,7 +24,7 @@ export function App() {
                         <Route component={EmailApp} path="/mail" />
                         <Route component={EmailCompose} path="/compose" />
 
-                        
+
                         {/* KEEP ROUTES */}
                         <Route component={Notes} path="/notes" />
 

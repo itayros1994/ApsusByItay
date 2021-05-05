@@ -1,0 +1,17 @@
+    .email-compose {
+        font-size: 35px;
+        border: black 5px solid;
+        color: white;
+        border-radius: 20px;
+        margin: 10px;
+    }
+    
+     :hover.email-compose {
+        background-color: rgb(192, 174, 174);
+    }
+    
+    .email-topic {
+        font-size: 50px;
+        text-align: center;
+        background-color: rgb(151, 202, 92);
+    }
