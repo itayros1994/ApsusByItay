@@ -14,28 +14,23 @@ export class EmailDetails extends React.Component {
 
   onDeleteMail = () => {
     mailService.deleteEmail(this.state.currEmailId)
-    .then(() => {
-      this.props.history.push('/mail')
-      console.log('hey')
-    })
+      .then(() => {
+        this.props.history.push('/mail')
+        console.log('hey')
+      })
   }
 
   loadEmail = () => {
-    const id = this.props.match.params.emailId 
-    this.setState({emailId : id});
-    const mails = mailService.mails
-    // Finding the Curr email By Find Id 
-    var currEmail = mails.find(mail => mail.id === id)
-    console.log(currEmail);
-    this.setState({ currEmail: currEmail.body })
-    console.log(this.state.currEmailId)
-    console.log(id)
+    const id = this.props.match.params.emailId
+    const mail = mailService.getMailById(id)
+    this.setState({ currEmail: mail })
   }
 
   render() {
+    if(!this.state.currEmail) return <div>'loading...'</div>
     return <div className="email-container">
       <section className="email">
-        {this.state.currEmail} <span onClick={this.onDeleteMail} className="delete-email">X</span> 
+        <div>{this.state.currEmail.body}</div> <span onClick={this.onDeleteMail} className="delete-email">X</span>
       </section>
     </div>
   }
