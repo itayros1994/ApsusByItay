@@ -21,11 +21,12 @@ export class EmailDetails extends React.Component {
   }
 
   loadEmail = () => {
-    const id = this.props.match.params.emailId
+    const id = this.props.match.params.emailId 
     this.setState({emailId : id});
     const mails = mailService.mails
-    // Finding the Curr email By Find Id
+    // Finding the Curr email By Find Id 
     var currEmail = mails.find(mail => mail.id === id)
+    console.log(currEmail);
     this.setState({ currEmail: currEmail.body })
     console.log(this.state.currEmailId)
     console.log(id)

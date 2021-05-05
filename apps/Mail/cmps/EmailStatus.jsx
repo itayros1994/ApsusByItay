@@ -1,23 +1,16 @@
 import { mailService } from '../services/mailService.js'
 export class EmailStatus extends React.Component {
-    state = {
-        emails: null,
-        mailReaded: null,
+
+    componentDidMount() {
     }
 
-    componentDidMount = () => {
-        const { emails } = this.props
-        this.setState({ emails })
-        console.log('oren!')
+    findReadingEmails = () => {
+        if (!this.props.emails) return 'loading....' 
+        return this.props.emails.filter((email) => email.isRead === false).length
     }
-
-    componentDidUpdate() {
-    console.log(this.state.emails)
-    }
-
-
 
     render() {
-        return <div>emailread!</div>
+        console.log(this.props.emails)
+        return <div className="unread-mails">Unread Mails :  {this.findReadingEmails()}</div>
     }
 }
