@@ -1,3 +1,4 @@
+<<<<<<< HEAD
         .emails-container {
             border: 5px solid rgb(0, 0, 0);
             font-size: 30px;
@@ -100,3 +101,43 @@
             margin: auto;
             padding: 10px;
         } */
+=======
+@import url(emailCompose.css);
+@import url(emailDetails.css);
+@import url(emailFilter.css);
+@import url(emailList.css);
+@import url(emailPreview.css);
+@import url(emailStatus.css);
+
+/* Add Mail Section */
+
+
+/* .page-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+.page-content-container {
+    display: flex;
+} */
+
+.input-detail {
+    font-size: 20px;
+    padding: 20px;
+}
+
+.textarea-detail {
+    font-size: 20px;
+    height: 600px;
+}
+
+.button-detail {
+    width: 250px;
+    height: 40px;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+}
+>>>>>>> 5864a9fc41166e7255d5062c6f1b844597b0040e

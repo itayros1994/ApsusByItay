@@ -1,0 +1,36 @@
+.emails-container {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 5px solid rgb(0, 0, 0);
+    font-size: 30px;
+    height: 5rem;
+    background-color: rgb(236, 227, 211);
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 2%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+:hover.emails-container {
+    background-color: rgb(209, 195, 170);
+    transition: 0.3s;
+}
+
+.email-send-by {
+    font-size: 40px;
+}
+
+.email-subject {
+    font-size: 30px;
+}
+
+.email-subject-prev {
+    font-size: 30px;
+}
+
+.email-body-prev {
+    font-size: 20px;
+}

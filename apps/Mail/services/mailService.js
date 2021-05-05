@@ -15,15 +15,34 @@ export const mailService = {
     isEmailRead,
     getMails,
     addMail,
-    getMailById
+    getMailById,
+    addComment
 
 }
 
 
-function getMails() {
-    mails = storageService.loadFromStorage(_LOCAL_STORAGE_KEY) || []
-    return Promise.resolve(mails)
+function getMails(filterBy) {
+    if (filterBy) {
+        var { text, readStatus } = filterBy
+
+        const filteredMails = mails.filter(mail => {
+            if (readStatus) {
+                if (readStatus === 'read') {
+                    return mail.isRead && mail.body.includes(text)
+                } else if (readStatus === 'unread') {
+                    return !mail.isRead && mail.body.includes(text)
+                } else {
+                    return mail && mail.body.includes(text)
+                }
+            }
+        })
+        return Promise.resolve(filteredMails)
+    } else {
+        mails = storageService.loadFromStorage(_LOCAL_STORAGE_KEY) || []
+        return Promise.resolve(mails)
+    }
 }
+
 
 function deleteEmail(emailId) {
     var emailIdx = mails.findIndex(function(mail) {
@@ -45,10 +64,15 @@ function isEmailRead(emailId) {
     mails[emailIdx].isRead = true
     storageService.saveToStorage(_LOCAL_STORAGE_KEY, mails)
     return Promise.resolve()
+}
 
+function addComment(emailId, replay) {
+    var mail = getMailById(emailId)
+    mail.replays.push(replay)
+    storageService.saveToStorage(_LOCAL_STORAGE_KEY, mails)
 }
 
 function addMail(sendBy, subject, body) {
-    mails.push({ id: utilService.makeId(), sendBy, subject, body, isRead: false, sentAt: Date.now() })
+    mails.push({ id: utilService.makeId(), sendBy, subject, body, isRead: false, sentAt: new Date(), replays: [] })
     storageService.saveToStorage(_LOCAL_STORAGE_KEY, mails)
 }

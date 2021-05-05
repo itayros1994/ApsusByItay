@@ -1,0 +1,12 @@
+.mail-filter-by {
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    margin: 10px;
+    float: right;
+}
+
+.input-filter-name {
+    font-size: 30px;
+    float: right;
+}

@@ -10,7 +10,6 @@ export class EmailStatus extends React.Component {
     }
 
     render() {
-        console.log(this.props.emails)
         return <div className="unread-mails">Unread Mails :  {this.findReadingEmails()}</div>
     }
 }

@@ -9,7 +9,8 @@ import { EmailCompose } from '../cmps/EmailCompose.jsx'
 export class EmailApp extends React.Component {
 
     state = {
-        emails: []
+        emails: [],
+        filterBy: null
     }
 
     componentDidMount() {
@@ -17,21 +18,31 @@ export class EmailApp extends React.Component {
         console.log(this.state.emails)
     }
     componentDidUpdate() {
-        if(!this.state.emails)
+        if (!this.state.emails)
             this.loadMails()
     }
 
     loadMails() {
-        mailService.getMails()
+        mailService.getMails(this.state.filterBy)
             .then(mails => this.setState({ emails: mails }))
+    }
+
+    onSetFilter = (filterBy) => {
+        console.log(filterBy)
+        this.setState({ filterBy }, this.loadMails)
     }
 
     render() {
         return <div>
             <section>
-                <EmailFilter />
-                <EmailList emails={this.state.emails}></EmailList>
-                <EmailStatus emails={this.state.emails} />
+                <h1 className="email-topic">Emails Box</h1>
+                <div className='page-content-container'>
+                    <div className='page-content'>
+                        <EmailFilter onSetFilter={this.onSetFilter} />
+                        <EmailList emails={this.state.emails}></EmailList>
+                        <EmailStatus emails={this.state.emails} />
+                    </div>
+                </div>
             </section>
         </div>
     }
