@@ -14,7 +14,8 @@ export const mailService = {
     deleteEmail,
     isEmailRead,
     getMails,
-    addMail
+    addMail,
+    getMailById
 
 }
 
@@ -31,6 +32,10 @@ function deleteEmail(emailId) {
     mails.splice(emailIdx, 1)
     storageService.saveToStorage(_LOCAL_STORAGE_KEY, mails)
     return Promise.resolve()
+}
+
+function getMailById(emailId) {
+    return mails.find(mail => mail.id === emailId)
 }
 
 function isEmailRead(emailId) {

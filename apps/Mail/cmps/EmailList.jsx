@@ -7,6 +7,7 @@ export class EmailList extends React.Component {
         const { emails } = this.props
         if(!emails) return ''
         return <div>
+            <h1>Emails Box</h1>
             <section>
                 <div>
                     <Link className="email-compose" to={'/compose'}>Email Compose</Link>

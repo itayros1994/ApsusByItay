@@ -13,8 +13,9 @@ export function EmailPreview({ email }) {
     return (
         <div>
             <div className="emails-container">
-               <div>Subject : {email.subject} :</div> 
-                <Link onClick={onEmailClicked} to={`/mail/${email.id}`}>Email</Link>
+                <div className="email-send-by">{email.sendBy}</div>
+               <div className="email-subject">{email.subject}</div> 
+                <Link onClick={onEmailClicked} to={`/mail/${email.id}`}>Read Email</Link>
             </div>
         </div>
     )
