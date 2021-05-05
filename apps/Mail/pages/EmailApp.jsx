@@ -1,6 +1,6 @@
 import { EmailPreview } from '../cmps/EmailPreview.jsx'
 import { mailService } from '../services/mailService.js'
-import { EmailDetails } from './EmailDetails.jsx.js'
+// import { EmailDetails } from './EmailDetails.jsx'
 import { EmailFilter } from '../cmps/EmailFilter.jsx'
 import { EmailList } from '../cmps/EmailList.jsx'
 import { EmailStatus } from '../cmps/EmailStatus.jsx'

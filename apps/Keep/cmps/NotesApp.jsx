@@ -1,6 +1,7 @@
 import { noteService } from '../services/notes-service.js'
 import { AddNote } from '/AddNote.jsx'
 import { NoteFilter } from '/NoteFilter.jsx'
+import { FilterCtg } from '/FilterCtg.jsx'
 import { NotePreview } from '/NotePreview.jsx'
 
 
@@ -50,6 +51,7 @@ export class NoteApp extends React.Component {
                 total notes: {this.state.notes.length}
                 <AddNote />
                 <NoteFilter onSetFilter={this.onSetFilter} />
+                <FilterCtg />
 
                 <div className="note-ispinned-title">pinned:</div>
                 <div className="notes-container">

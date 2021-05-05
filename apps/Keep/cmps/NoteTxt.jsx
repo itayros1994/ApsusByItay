@@ -16,7 +16,7 @@ export class _NoteTxt extends React.Component {
             <article className="note-container">
                 <div className="note-preview-container" style={style}>
                     <div className="note-title">Don't forget!</div>
-                    txt: {info.txt}
+                    {info.txt}
                 </div>
 
                 <div className="note-editor-container">
