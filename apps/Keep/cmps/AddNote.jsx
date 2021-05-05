@@ -50,19 +50,19 @@ export class _AddNote extends React.Component {
             <form onSubmit={this.onAddNote} className="add-note-form">
                 <input type="text" size="40" placeholder={this.formPlaceHolder + '...'} onChange={this.handleChangeText} />
                 <span onClick={() => { this.handleTypeChange("NoteText") }}>
-                    <i className={"fas fa-text notes-type-btn" + (this.state.type === 'NoteText' ? ' notes-type-btn-active' : '')}></i>
+                    <i className={"pointer fas fa-text notes-type-btn" + (this.state.type === 'NoteText' ? ' notes-type-btn-active' : '')}></i>
                 </span>
 
                 <span onClick={() => { this.handleTypeChange("NoteTodos") }}>
-                    <i className={"fas fa-list notes-type-btn" + (this.state.type === 'NoteTodos' ? ' notes-type-btn-active' : '')}></i>
+                    <i className={"pointer fas fa-list notes-type-btn" + (this.state.type === 'NoteTodos' ? ' notes-type-btn-active' : '')}></i>
                 </span>
 
                 <span onClick={() => { this.handleTypeChange("NoteImg") }}>
-                    <i className={"fas fa-img notes-type-btn" + (this.state.type === 'NoteImg' ? ' notes-type-btn-active' : '')}></i>
+                    <i className={"pointer fas fa-img notes-type-btn" + (this.state.type === 'NoteImg' ? ' notes-type-btn-active' : '')}></i>
                 </span>
 
                 <span onClick={() => { this.handleTypeChange("NoteVideo") }}>
-                    <i className={"fab fa-video notes-type-btn" + (this.state.type === 'NoteVideo' ? ' notes-type-btn-active' : '')}></i>
+                    <i className={"pointer fab fa-video notes-type-btn" + (this.state.type === 'NoteVideo' ? ' notes-type-btn-active' : '')}></i>
                 </span>
 
                 <input type="submit" value="Add note!" />
