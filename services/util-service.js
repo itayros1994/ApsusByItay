@@ -2,6 +2,7 @@ export const utilService = {
     makeId,
     makeLorem,
     getRandomColor,
+    returnDateFromTs,
     getRandomInt
 }
 
@@ -39,6 +40,16 @@ function getRandomColor() {
     }
 
     return color;
+}
+
+function returnDateFromTs(ts) {
+    const date = new Date(ts)
+    const year = date.getFullYear()
+    const month = date.getMonth()
+    const day = date.getDay()
+    const dateForIntl = new Date(Date.UTC(year, month, day))
+
+    return new Intl.DateTimeFormat('en-US', { dateStyle: 'full' }).format(dateForIntl)
 }
 
 // Define getRandomInt() - (max is exclusive, min is inclusive)
