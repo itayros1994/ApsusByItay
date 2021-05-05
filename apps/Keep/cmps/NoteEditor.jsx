@@ -40,8 +40,15 @@ export class _NoteEditor extends React.Component {
 
     onCopyToClipboard = (nId) => {
         noteService.getNoteTxtToCopy(nId)
-        .then(() => {
-        })
+            .then(() => {
+            })
+    }
+
+    onDeleteNote = (nId) => {
+        noteService.deleteNote(nId)
+            .then(() => {
+                this.props.history.push('/notes')
+            })
     }
 
 
@@ -51,16 +58,18 @@ export class _NoteEditor extends React.Component {
             <div className="note-editor-container">
                 <span className="note-editor-type-symbol">{this.getNoteSymbol()}</span>
 
-                <span className="note-editor-pin">
+                <span className="note-editor-pin pointer">
                     <img src={isPinned ? "./apps/Keep/assets/img/unpin.png" : "./apps/Keep/assets/img/pin.png"}
                         onClick={() => { this.onTogglePin(id) }} />
                 </span>
 
                 <span className="fas note-editor-color-picker" style={{ color: style.backgroundColor }}>
-                    <input className="note-editor-hider" type="color" onChange={(ev) => { this.onChangeBgcColor(id, ev.target.value) }} />
+                    <input className="note-editor-hider pointer" type="color" onChange={(ev) => { this.onChangeBgcColor(id, ev.target.value) }} />
                 </span>
 
-                <span className="fas note-editor-copy" onClick={() => { this.onCopyToClipboard(id) }}></span>
+                <span className="fas note-editor-copy pointer" onClick={() => { this.onCopyToClipboard(id) }}></span>
+
+                <span className="fas note-editor-delete pointer" onClick={() => { this.onDeleteNote(id) }}></span>
             </div>
         )
     }
