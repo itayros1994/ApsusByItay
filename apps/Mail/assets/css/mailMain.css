@@ -77,10 +77,10 @@
             align-items: stretch;
         }
         
-        input {
+        /* input {
             font-size: 20px;
             padding: 20px;
-        }
+        } */
         
         textarea {
             font-size: 20px;
@@ -93,10 +93,10 @@
             margin: 20px;
         }
         
-        button {
+        /* button {
             width: 250px;
             height: 40px;
             text-align: center;
             margin: auto;
             padding: 10px;
-        }
+        } */

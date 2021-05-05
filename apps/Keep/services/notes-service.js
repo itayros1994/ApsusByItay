@@ -8,42 +8,54 @@ export const noteService = {
     deleteTodo,
     addNote,
     addTodo,
+    editNoteTitle,
+    editNoteTxt,
+    editTodo,
     togglePin,
     toggleCheckTodo,
     changeBgcColor,
     getNoteTxtToCopy,
 }
 
-function query(filterTxt) {
-    if (!filterTxt) return Promise.resolve(notes)
+function query(filterTxt, ctg) {
+    if (!filterTxt && !ctg) return Promise.resolve(notes)
 
     filterTxt = filterTxt.toLowerCase()
 
     let filtered = []
-    notes.forEach(note => {
-        switch (note.type) {
-            case 'NoteText':
-                if (note.info.txt.toLowerCase().includes(filterTxt)) filtered.push(note)
-                break
+    if (filterTxt) {
+        notes.forEach(note => {
+            switch (note.type) {
+                case 'NoteText':
+                    if (note.info.txt.toLowerCase().includes(filterTxt)) filtered.push(note)
+                    break
 
-            case 'NoteTodos':
-                if (note.info.label.toLowerCase().includes(filterTxt)) filtered.push(note)
+                case 'NoteTodos':
+                    if (note.info.label.toLowerCase().includes(filterTxt)) filtered.push(note)
 
-                else {
-                    let todosTxt = ''
-                    note.info.todos.forEach((todo) => {
-                        todosTxt += todo.txt
-                    })
-                    if (todosTxt.toLowerCase().includes(filterTxt)) filtered.push(note)
-                }
-                break
+                    else {
+                        let todosTxt = ''
+                        note.info.todos.forEach((todo) => {
+                            todosTxt += todo.txt
+                        })
+                        if (todosTxt.toLowerCase().includes(filterTxt)) filtered.push(note)
+                    }
+                    break
 
-            case 'NoteImg':
-            case 'NoteVideo':
-                if (note.info.title.toLowerCase().includes(filterTxt)) filtered.push(note)
-                break
-        }
-    })
+                case 'NoteImg':
+                case 'NoteVideo':
+                    if (note.info.title.toLowerCase().includes(filterTxt)) filtered.push(note)
+                    break
+            }
+        })
+    }
+
+    if (ctg) {
+        if (!filterTxt) filtered = notes
+        filtered = filtered.filter((note) => {
+            return note.type === ctg
+        })
+    }
 
     return Promise.resolve(filtered)
 }
@@ -76,54 +88,73 @@ function getNote(nId) {
     return Promise.resolve(notes[noteIdx])
 }
 
-function addNote(type, value) {
+function addNote(type, title, txt) {
     switch (type) {
         case 'NoteText':
-            notes.push({
+            notes.unshift({
                 id: utilService.makeId(),
                 type: "NoteText",
                 isPinned: false,
                 info: {
-                    title: "Don't forget!",
-                    txt: value
+                    title,
+                    txt
                 },
                 style: {
                     backgroundColor: utilService.getRandomColor()
                 }
             })
-            break;
+            break
 
         case 'NoteTodos':
-            break;
+            const todos = txt.split(',')
+            let todosObjs = []
+            todos.forEach((todo) => {
+                todosObjs.push({ id: utilService.makeId(), txt: todo, doneAt: null })
+            })
+
+            notes.unshift({
+                id: utilService.makeId(),
+                type: "NoteTodos",
+                isPinned: false,
+                info: {
+                    label: title,
+                    todos: todosObjs
+                },
+                style: {
+                    backgroundColor: utilService.getRandomColor()
+                }
+            })
+            break
 
         case 'NoteImg':
-            notes.push({
+            notes.unshift({
                 id: utilService.makeId(),
                 type: "NoteImg",
                 isPinned: false,
                 info: {
-                    url: value,
-                    title: "Me playing Mi"
+                    title,
+                    url: txt
                 },
                 style: {
                     backgroundColor: utilService.getRandomColor()
                 }
             })
-            break;
+            break
 
         case 'NoteVideo':
-            notes.push({
+            notes.unshift({
                 id: utilService.makeId(),
                 type: "NoteVideo",
                 isPinned: false,
                 info: {
-                    videoUrl: value,
+                    title,
+                    videoUrl: txt
                 },
                 style: {
                     backgroundColor: utilService.getRandomColor()
                 }
             })
-            break;
+            break
     }
 
     _saveNotesToStorage()
@@ -137,6 +168,36 @@ function addTodo(nId, txt) {
     notes[noteIdx].info.todos.push(
         { id: utilService.makeId(), txt, doneAt: null }
     )
+    _saveNotesToStorage()
+
+    return Promise.resolve()
+}
+
+function editNoteTitle(nId, title, isTodos) {
+    const noteIdx = _getNoteIdxInNotes(nId)
+
+    if (!isTodos) notes[noteIdx].info.title = title
+    else notes[noteIdx].info.label = title
+
+    _saveNotesToStorage()
+
+    return Promise.resolve()
+}
+
+function editNoteTxt(nId, txt) {
+    const noteIdx = _getNoteIdxInNotes(nId)
+    notes[noteIdx].info.txt = txt
+
+    _saveNotesToStorage()
+
+    return Promise.resolve()
+}
+
+function editTodo(nId, tId, newTodo) {
+    const noteIdx = _getNoteIdxInNotes(nId)
+    const todoIdx = _getTodoIdInNote(noteIdx, tId)
+    notes[noteIdx].info.todos[todoIdx].txt = newTodo
+
     _saveNotesToStorage()
 
     return Promise.resolve()
@@ -218,6 +279,62 @@ function _createNotesLst() {
             type: "NoteText",
             isPinned: true,
             info: {
+                title: "Don't forget",
+                txt: "Fullstack Me Baby!"
+            },
+            style: {
+                backgroundColor: utilService.getRandomColor()
+            }
+        },
+
+        {
+            id: utilService.makeId(),
+            type: "NoteTodos",
+            isPinned: true,
+            info: {
+                label: "How was it:",
+                todos: [
+                    { id: utilService.makeId(), txt: "Do that", doneAt: null },
+                    { id: utilService.makeId(), txt: "Do this", doneAt: 1620162197422 }
+                ]
+            },
+            style: {
+                backgroundColor: utilService.getRandomColor()
+            }
+        },
+
+        {
+            id: utilService.makeId(),
+            type: "NoteImg",
+            isPinned: false,
+            info: {
+                url: "https://ca.slack-edge.com/T01JRLNVCEA-U01PTQMHFD4-db4ae79d22a4-512",
+                title: "Itay Rosental"
+            },
+            style: {
+                backgroundColor: utilService.getRandomColor()
+            }
+        },
+
+        {
+            id: utilService.makeId(),
+            type: "NoteVideo",
+            isPinned: false,
+            info: {
+                title: "note title",
+                videoUrl: "https://www.youtube.com/watch?v=vafFqQvSe3U"
+            },
+            style: {
+                backgroundColor: utilService.getRandomColor()
+            }
+        },
+
+        {
+            id: utilService.makeId(),
+            type: "NoteText",
+            isPinned: true,
+            info: {
+                title: "Don't forget",
                 txt: "Fullstack Me Baby!"
             },
             style: {
@@ -260,7 +377,7 @@ function _createNotesLst() {
         //     isPinned: false,
         //     info: {
         //         title: "note title",
-        //         videoUrl: "https://www.youtube.com/watch?v=vafFqQvSe3U",
+        //         videoUrl: "https://www.youtube.com/watch?v=vafFqQvSe3U"
         //     },
         //     style: {
         //         backgroundColor: utilService.getRandomColor()
@@ -272,60 +389,7 @@ function _createNotesLst() {
             type: "NoteText",
             isPinned: true,
             info: {
-                txt: "Fullstack Me Baby!"
-            },
-            style: {
-                backgroundColor: utilService.getRandomColor()
-            }
-        },
-
-        {
-            id: utilService.makeId(),
-            type: "NoteTodos",
-            isPinned: true,
-            info: {
-                label: "How was it:",
-                todos: [
-                    { id: utilService.makeId(), txt: "Do that", doneAt: null },
-                    { id: utilService.makeId(), txt: "Do this", doneAt: 1620162197422 }
-                ]
-            },
-            style: {
-                backgroundColor: utilService.getRandomColor()
-            }
-        },
-
-        {
-            id: utilService.makeId(),
-            type: "NoteImg",
-            isPinned: false,
-            info: {
-                url: "https://ca.slack-edge.com/T01JRLNVCEA-U01PTQMHFD4-db4ae79d22a4-512",
-                title: "Itay Rosental"
-            },
-            style: {
-                backgroundColor: utilService.getRandomColor()
-            }
-        },
-
-        // {
-        //     id: utilService.makeId(),
-        //     type: "NoteVideo",
-        //     isPinned: false,
-        //     info: {
-        //         title: "note title",
-        //         videoUrl: "https://www.youtube.com/watch?v=vafFqQvSe3U",
-        //     },
-        //     style: {
-        //         backgroundColor: utilService.getRandomColor()
-        //     }
-        // },
-
-        {
-            id: utilService.makeId(),
-            type: "NoteText",
-            isPinned: true,
-            info: {
+                title: "Don't forget",
                 txt: "Fullstack Me Baby!"
             },
             style: {
@@ -369,7 +433,7 @@ function _createNotesLst() {
         //     isPinned: false,
         //     info: {
         //         title: "note title",
-        //         videoUrl: "https://www.youtube.com/watch?v=vafFqQvSe3U",
+        //         videoUrl: "https://www.youtube.com/watch?v=vafFqQvSe3U"
         //     },
         //     style: {
         //         backgroundColor: utilService.getRandomColor()

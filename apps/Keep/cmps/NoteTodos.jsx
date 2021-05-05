@@ -1,4 +1,5 @@
 import { NoteEditor } from './NoteEditor.jsx'
+import { NoteTitleEditable } from './NoteTitleEditable.jsx'
 import { TodoPreview } from './TodoPreview.jsx'
 import { AddTodo } from './AddTodo.jsx'
 
@@ -16,7 +17,7 @@ export class _NoteTodos extends React.Component {
         return (
             <article className="note-container">
                 <div className="note-preview-container" style={style}>
-                    <div className="note-title">{info.label}</div>
+                    <NoteTitleEditable id={id} title={info.label} todos={true} />
                     {info.todos.map((todo) => {
                         return <TodoPreview todo={todo} noteId={id} key={todo.id} />
                     })}

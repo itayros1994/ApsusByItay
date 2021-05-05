@@ -1,4 +1,5 @@
 import { NoteEditor } from './NoteEditor.jsx'
+import { NoteTitleEditable } from './NoteTitleEditable.jsx'
 
 const { withRouter } = ReactRouterDOM
 
@@ -14,7 +15,7 @@ export class _NoteImg extends React.Component {
         return (
             <article className="note-container">
                 <div className="note-preview-container" style={style}>
-                    <div className="note-title">{info.title}</div>
+                    <NoteTitleEditable id={id} title={info.title} />
                     <img src={info.url} className="note-img" />
                 </div>
 

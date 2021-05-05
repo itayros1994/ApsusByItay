@@ -1,4 +1,5 @@
 import { NoteEditor } from './NoteEditor.jsx'
+import { NoteTitleEditable } from './NoteTitleEditable.jsx'
 
 const { withRouter } = ReactRouterDOM
 
@@ -20,9 +21,9 @@ export class _NoteVideo extends React.Component {
         return (
             <article className="note-container">
                 <div className="note-preview-container" style={style}>
-                    <div className="note-title">{info.title}</div>
+                    <NoteTitleEditable id={id} title={info.title} />
                     <iframe width="420" height="315" frameBorder="0" src={this.youtubeFixed} ></iframe>
-                    </div>
+                </div>
 
                 <div className="note-editor-container">
                     <NoteEditor note={this.props.note} />

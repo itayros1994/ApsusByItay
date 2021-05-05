@@ -8,7 +8,8 @@ import { NotePreview } from '/NotePreview.jsx'
 export class NoteApp extends React.Component {
     state = {
         notes: null,
-        filterTxt: ''
+        filterTxt: '',
+        ctg: ''
     }
 
 
@@ -18,7 +19,8 @@ export class NoteApp extends React.Component {
 
 
     loadNotes = () => {
-        noteService.query(this.state.filterTxt)
+        const {filterTxt, ctg} = this.state
+        noteService.query(filterTxt, ctg)
             .then(notes => {
                 this.setState({ notes })
             })
@@ -26,6 +28,10 @@ export class NoteApp extends React.Component {
 
     onSetFilter = (filterTxt) => {
         this.setState({ filterTxt }, this.loadNotes)
+    }
+
+    onSetCtg=(ctg)=>{
+        this.setState({ctg}, this.loadNotes)
     }
 
     get filterPinned() {
@@ -51,7 +57,7 @@ export class NoteApp extends React.Component {
                 total notes: {this.state.notes.length}
                 <AddNote />
                 <NoteFilter onSetFilter={this.onSetFilter} />
-                <FilterCtg />
+                <FilterCtg onSetCtg={this.onSetCtg} />
 
                 <div className="note-ispinned-title">pinned:</div>
                 <div className="notes-container">

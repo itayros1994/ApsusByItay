@@ -1,22 +1,22 @@
 import { NoteEditor } from './NoteEditor.jsx'
-
+import { NoteTitleEditable } from './NoteTitleEditable.jsx'
+import { NoteTxtEditable } from './NoteTxtEditable.jsx'
 
 const { withRouter } = ReactRouterDOM
 
 export class _NoteTxt extends React.Component {
     state = {
-
     }
 
 
     render() {
-        const { id, info, isPinned, style } = this.props.note
+        const { id, info, style } = this.props.note
 
         return (
             <article className="note-container">
                 <div className="note-preview-container" style={style}>
-                    <div className="note-title">Don't forget!</div>
-                    {info.txt}
+                    <NoteTitleEditable id={id} title={info.title} />
+                    <NoteTxtEditable id={id} txt={info.txt} />
                 </div>
 
                 <div className="note-editor-container">

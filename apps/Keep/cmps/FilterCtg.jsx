@@ -1,16 +1,21 @@
 export class FilterCtg extends React.Component {
-    state={
-
+    state = {
+        ctg: ''
     }
 
 
-    onChangeSelect = (ev) =>{
-        console.log(ev.target.value)
+    onChangeSelect = (ev) => {
+        const ctg = ev.target.value
+        this.setState(({ shitBakod }) => ({
+            ctg
+        }), () => {
+            this.props.onSetCtg(this.state.ctg)
+        })
     }
 
 
-    render(){
-        return(
+    render() {
+        return (
             <select onChange={this.onChangeSelect}>
                 <option value="">All</option>
                 <option value="NoteText">Text</option>
