@@ -3,6 +3,7 @@ import { AddNote } from '/AddNote.jsx'
 import { NoteFilter } from '/NoteFilter.jsx'
 import { FilterCtg } from '/FilterCtg.jsx'
 import { NotePreview } from '/NotePreview.jsx'
+import { eventBusService } from '../......../services/event-bus-service.js'
 
 
 export class NoteApp extends React.Component {
@@ -19,10 +20,11 @@ export class NoteApp extends React.Component {
 
 
     loadNotes = () => {
-        const {filterTxt, ctg} = this.state
+        const { filterTxt, ctg } = this.state
         noteService.query(filterTxt, ctg)
             .then(notes => {
                 this.setState({ notes })
+                eventBusService.emit('notes-count', this.state.notes.length)
             })
     }
 
@@ -30,8 +32,8 @@ export class NoteApp extends React.Component {
         this.setState({ filterTxt }, this.loadNotes)
     }
 
-    onSetCtg=(ctg)=>{
-        this.setState({ctg}, this.loadNotes)
+    onSetCtg = (ctg) => {
+        this.setState({ ctg }, this.loadNotes)
     }
 
     get filterPinned() {
@@ -54,24 +56,31 @@ export class NoteApp extends React.Component {
 
         return (
             <section>
-                total notes: {this.state.notes.length}
                 <AddNote />
-                <NoteFilter onSetFilter={this.onSetFilter} />
-                <FilterCtg onSetCtg={this.onSetCtg} />
-
-                <div className="note-ispinned-title">pinned:</div>
-                <div className="notes-container">
-                    {this.filterPinned.map(note => {
-                        return <NotePreview note={note} key={note.id} />
-                    })}
+                <div className="text-center notes-filter-container">
+                    <NoteFilter onSetFilter={this.onSetFilter} />
+                    <FilterCtg onSetCtg={this.onSetCtg} />
                 </div>
 
-                <div className="note-ispinned-title">not pinned:</div>
-                <div className="notes-container">
-                    {this.filterNotPinned.map(note => {
-                        return <NotePreview note={note} key={note.id} />
-                    })}
-                </div>
+                {this.filterPinned.length >= 1 &&
+                    <React.Fragment>
+                        <div className="text-center note-pinned-title">Pinned:</div>
+                        <div className="notes-container">
+                            {this.filterPinned.map(note => {
+                                return <NotePreview note={note} key={note.id} />
+                            })}
+                        </div>
+                    </React.Fragment>}
+
+                {this.filterNotPinned.length >= 1 &&
+                    <React.Fragment>
+                        <div className="text-center note-not-pinned-title">Not pinned:</div>
+                        <div className="notes-container">
+                            {this.filterNotPinned.map(note => {
+                                return <NotePreview note={note} key={note.id} />
+                            })}
+                        </div>
+                    </React.Fragment>}
             </section >
         )
     }

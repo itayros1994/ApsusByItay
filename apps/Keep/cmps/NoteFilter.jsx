@@ -1,3 +1,6 @@
+import { eventBusService } from '../......../services/event-bus-service.js'
+import { NotesCount } from './NotesCount.jsx'
+
 export class NoteFilter extends React.Component {
     state = {
         filter: ''
@@ -13,7 +16,7 @@ export class NoteFilter extends React.Component {
         })
     }
 
-    onClearFilter = (ev) =>{
+    onClearFilter = (ev) => {
         this.setState(({ shitBakod }) => ({
             filter: ''
         }), () => {
@@ -24,11 +27,16 @@ export class NoteFilter extends React.Component {
 
     render() {
         const { filter } = this.state
+
         return (
-            <form >
-                <input type="text" placeholder="Search notes" name="filter" value={filter} onChange={this.handleChange} />
-                <button onClick={this.onClearFilter}>X</button>
-            </form>
+            <section className="notes-search-container text-center">
+                <label htmlFor="notes-search-input" className="fas"></label>
+                <span>
+                    <input type="text" id="notes-search-input" placeholder="Search notes" name="filter" value={filter} onChange={this.handleChange} />
+                    <i onClick={this.onClearFilter} className="pointer fas notes-filter-cancel-btn"></i>
+                </span>
+                (<NotesCount />)
+            </section>
         )
     }
 }

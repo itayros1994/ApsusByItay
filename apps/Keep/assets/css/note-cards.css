@@ -1,0 +1,32 @@
+/* NOTE CARD */
+.note-container {
+  border: 2px solid #111;
+  border-radius: 5px;
+  margin: 0 auto 1rem;
+  overflow: hidden;
+  width: 300px;
+}
+
+@media screen and (min-width: 350px) {
+  .note-container {
+    width: 340px;
+  }
+}
+
+@media screen and (min-width: 420px) {
+  .note-container {
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .note-container {
+    width: 350px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .note-container {
+    width: 380px;
+  }
+}
