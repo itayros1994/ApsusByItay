@@ -27,12 +27,14 @@ export class EmailDetails extends React.Component {
     if (!currEmail) return <div>'loading...'</div>
     return <div className="email-container">
       <section className="email">
-        <div><Link className="back-mailbox" to={'/mail'}>Mail Box ➡</Link></div>
+        <div><Link className="back-mailbox" to={'/mail'}>➡</Link></div>
         <div className="email-body">{currEmail.sendBy} :  {currEmail.body}</div>
-        <div> Replay : {currEmail.replays}</div>
-        <textarea value={this.state.replay} onChange={(ev) => this.setState({ replay: ev.target.value })} required placeholder="Replay Messege" name="textarea" rows="10" cols="20" >Write something here</textarea>
-        <button onClick={this.onAddComment}>Comment</button>
+        <div className="email-replay"> Replay : {currEmail.replays}</div>
+        <div className="inputs-container">
+        <textarea value={this.state.replay} onChange={(ev) => this.setState({ replay: ev.target.value })} required placeholder="Replay Messege" name="textarea" rows="20" cols="100" >Write something here</textarea>
+        <button className="comment-button" onClick={this.onAddComment}>Comment</button>
         <button onClick={this.onDeleteMail} className="delete-email">Delete Email</button>
+        </div>
       </section>
     </div>
   }

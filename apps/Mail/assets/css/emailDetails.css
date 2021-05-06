@@ -2,9 +2,12 @@
     display: flex;
     cursor: pointer;
     font-size: 30px;
-    height: 50rem;
+    height: 90%;
+    width: 58%;
     margin: 5px;
-    background-color: rgb(197, 209, 208);
+    background-color: rgb(111, 223, 213);
+    margin: auto;
+    margin-top: 50px;
 }
 
 .email {
@@ -24,16 +27,42 @@
     color: red;
     font-size: 30px;
     width: 90%;
-    margin: 35px;
 }
 
 .back-mailbox {
     float: right;
     border: 3px solid black;
-    border-radius: 20px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    color: blue;
+}
+
+.back-mailbox:hover {
+    background-color: rgb(131, 193, 243);
+    transition: 0.5s;
 }
 
 .email-body {
-    background-color: rgb(170, 145, 145);
+    background-color: rgb(79, 190, 28);
     border: 2px solid black;
+}
+
+.email-replay {
+    background-color: rgb(111, 193, 218);
+    border: 2px solid black;
+}
+
+.inputs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comment-button {
+    font-size: 20px;
+    border-radius: 8%;
+    width: 200px;
+    margin: 5px;
 }

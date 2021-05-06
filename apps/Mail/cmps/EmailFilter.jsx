@@ -18,7 +18,7 @@ export class EmailFilter extends React.Component {
     render() {
         const { text } = this.state.filterBy
         return (
-            <div>
+            <div className="mail-filter-container">
                 <select className="mail-filter-by" name="readStatus" onChange={this.handleChange}>
                     <option value="all">All</option>
                     <option value="read">Read</option>
