@@ -9,12 +9,12 @@ body {
     background-color: rgb(63, 86, 93);
 }
 
-.page-layout-container{
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
+.page-layout-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
 }
 
-.main-spacer{
-  height: 4rem;
+.main-spacer {
+    height: 4rem;
 }

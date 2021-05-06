@@ -7,18 +7,11 @@ export class EmailList extends React.Component {
         const { emails, onDeleteMail } = this.props
         if (!emails) return ''
 
-        return <div className="cheak-itay-container">
-
-            <div className="check-itay">
-                <section className="email-list-container">
-                    <div>
-                        <button className="email-compose"><Link to={'/compose'}>+Compose</Link></button>
-                    </div>
-                    <div className="email-prev-cont">{emails.map((email, idx) => <EmailPreview onDeleteMail={onDeleteMail} key={idx} email={email} />)}</div>
-                </section>
+        return (
+            <div className="email-list-container">
+                {emails.map((email, idx) => <EmailPreview onDeleteMail={onDeleteMail} key={idx} email={email} />)}
             </div>
-
-        </div>
+        )
 
     }
 

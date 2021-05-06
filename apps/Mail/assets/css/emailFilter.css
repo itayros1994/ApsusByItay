@@ -1,33 +1,17 @@
 .mail-filter-by {
-    display: flex;
-    flex-direction: row;
-    font-size: 30px;
+    font-size: 25px;
     margin: 10px;
-    float: right;
 }
 
 .input-filter-name {
-    font-size: 30px;
-    float: right;
+    font-size: 25px;
+    width: 100%;
 }
-
-
-/* .mail-filter-container {
-    display: flex;
-    flex-direction: column;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: flex-end;
-    margin: 50px;
-    width: 30%;
-    float: right;
-} */
 
 .mail-filter-container {
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    padding: 10px;
     width: 20%;
     float: left;
     justify-content: space-evenly;

@@ -1,23 +1,36 @@
-.emails-container {
+.email-preview-container {
+    width: 100%;
+}
+
+.email-preview-container a {
+    text-decoration: none;
+    color: black;
+}
+
+.email-content {
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     border: 5px solid rgb(0, 0, 0);
     font-size: 25px;
-    width: 95rem;
-    height: 4rem;
-    background-color: rgb(134, 195, 223);
+    width: 92%;
+    height: 3.5rem;
+    background-color: rgb(212, 226, 173);
     opacity: 70%;
     font-family: 'Times New Roman', Times, serif;
     border-radius: 2%;
-    margin: 10px;
+    margin-bottom: 10px;
     padding: 10px;
     border-radius: 20px;
 }
 
-:hover.emails-container {
+:hover.email-content {
     background-color: rgb(209, 195, 170);
     transition: 0.3s;
+}
+
+.email-send-by a {
+    text-decoration: none;
 }
 
 .email-send-by {
@@ -36,11 +49,7 @@
     font-size: 20px;
 }
 
-.email-send-by a {
-    text-decoration: none;
-}
-
-.email-preview-container a {
-    text-decoration: none;
-    color: black;
+.email-perv-cont {
+    margin: auto;
+    border-left: solid black 4px;
 }

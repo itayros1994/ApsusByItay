@@ -1,3 +1,4 @@
+const { Link } = ReactRouterDOM
 export class EmailFilter extends React.Component {
 
     state = {
@@ -27,7 +28,7 @@ export class EmailFilter extends React.Component {
 
                 <div>
                     <label  htmlFor="FilterByText"></label>
-                    <input placeholder="Filter By Name" className="input-filter-name" type="text" name="text" value={text} onChange={this.handleChange} />
+                    <input placeholder="Search Email" className="input-filter-name" type="text" name="text" value={text} onChange={this.handleChange} />
                 </div>
             </div>
         )

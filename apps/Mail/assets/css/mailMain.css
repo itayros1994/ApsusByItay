@@ -4,21 +4,36 @@
 @import url(emailList.css);
 @import url(emailPreview.css);
 @import url(emailStatus.css);
+@import url(SideBar.css);
 
 /* Add Mail Section */
 
-.page-content {
+.email-main-container {
+    background-color: white;
     display: flex;
-    flex-direction: column;
-    align-content: stretch;
-    justify-content: center;
-    align-items: flex-start;
+    height: 100%;
 }
 
-
-/* .page-content-container {
+.actions-list-container {
     display: flex;
-} */
+    flex-direction: column;
+    flex: 1;
+}
+
+.mail-filter-container {
+    border-bottom: black 2px solid;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    width: 100%;
+    float: left;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    background-color: orange;
+}
 
 .input-detail {
     font-size: 20px;
@@ -28,12 +43,4 @@
 .textarea-detail {
     font-size: 20px;
     height: 600px;
-}
-
-.button-detail {
-    width: 250px;
-    height: 40px;
-    text-align: center;
-    margin: auto;
-    padding: 10px;
 }

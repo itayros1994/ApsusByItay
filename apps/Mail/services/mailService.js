@@ -72,7 +72,13 @@ function addComment(emailId, replay) {
     storageService.saveToStorage(_LOCAL_STORAGE_KEY, mails)
 }
 
+// get time
+var today = new Date();
+var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var dateTime = date + ' ' + time;
+
 function addMail(sendBy, subject, body) {
-    mails.push({ id: utilService.makeId(), sendBy, subject, body, isRead: false, sentAt: new Date(), replays: [] })
+    mails.push({ id: utilService.makeId(), sendBy, subject, body, isRead: false, sentAt: dateTime, replays: [] })
     storageService.saveToStorage(_LOCAL_STORAGE_KEY, mails)
 }

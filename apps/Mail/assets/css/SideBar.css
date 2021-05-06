@@ -1,0 +1,48 @@
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 10px;
+    border-right: 2px solid black;
+    cursor: pointer;
+    background-color: orange;
+}
+
+.inbox {
+    width: 100px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 5%;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.stared {
+    width: 100px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 5%;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.pinned {
+    width: 100px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 5%;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.inbox:hover {
+    background-color: grey;
+}
+
+.stared:hover {
+    background-color: grey;
+}
+
+.pinned:hover {
+    background-color: grey;
+}
