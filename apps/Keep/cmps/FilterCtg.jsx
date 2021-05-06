@@ -16,13 +16,16 @@ export class FilterCtg extends React.Component {
 
     render() {
         return (
-            <select onChange={this.onChangeSelect}>
-                <option value="">All</option>
-                <option value="NoteText">Text</option>
-                <option value="NoteTodos">Todos</option>
-                <option value="NoteImg">Image</option>
-                <option value="NoteVideo">Video</option>
-            </select>
+            <section className="notes-ctg-filter-container">
+                <span className="fas">Filter notes type: </span>
+                <select className="pointer notes-ctg-filter-select" onChange={this.onChangeSelect}>
+                    <option value="">All</option>
+                    <option value="NoteText">Text</option>
+                    <option value="NoteTodos">Todos</option>
+                    <option value="NoteImg">Image</option>
+                    <option value="NoteVideo">Video</option>
+                </select>
+            </section>
         )
     }
 }

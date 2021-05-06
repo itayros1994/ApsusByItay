@@ -14,7 +14,15 @@ export class _AddNote extends React.Component {
     onAddNote = (ev) => {
         ev.preventDefault()
         const { type, title, txt } = this.state
-        if (!txt || !title) return
+        
+        if (!title) {
+            eventBusService.emit('show-user-ntf', { msg: 'Note title required', type: 'ntf-alarm' })
+            return
+        }
+        if (!txt) {
+            eventBusService.emit('show-user-ntf', { msg: 'Note content required', type: 'ntf-alarm' })
+            return
+        }
 
         noteService.addNote(type, title, txt)
             .then(() => {
@@ -58,28 +66,39 @@ export class _AddNote extends React.Component {
 
         return (
             <React.Fragment>
-                <form onSubmit={this.onAddNote} className="add-note-form">
-                    <input type="text" size="40" name="title" value={title} placeholder="New note title" onChange={this.handleChangeText} /><br />
-                    <input type="text" size="40" name="txt" value={txt} placeholder={this.formPlaceHolder + '...'} onChange={this.handleChangeText} />
+                <div className="add-note-container">
+                    <form onSubmit={this.onAddNote}>
+                        <input type="text" name="title" value={title} placeholder="New note title" onChange={this.handleChangeText} />
 
-                    <span onClick={() => { this.handleTypeChange("NoteText") }}>
-                        <i className={"pointer fas fa-text notes-type-btn" + (type === 'NoteText' ? ' notes-type-btn-active' : '')}></i>
-                    </span>
+                        {type === "NoteText" &&
+                            <textarea name="txt" value={txt} placeholder={this.formPlaceHolder + '...'} onChange={this.handleChangeText} />}
 
-                    <span onClick={() => { this.handleTypeChange("NoteTodos") }}>
-                        <i className={"pointer fas fa-list notes-type-btn" + (type === 'NoteTodos' ? ' notes-type-btn-active' : '')}></i>
-                    </span>
+                        {type !== "NoteText" &&
+                            <input type="text" name="txt" value={txt} placeholder={this.formPlaceHolder + '...'} onChange={this.handleChangeText} />}
 
-                    <span onClick={() => { this.handleTypeChange("NoteImg") }}>
-                        <i className={"pointer fas fa-img notes-type-btn" + (type === 'NoteImg' ? ' notes-type-btn-active' : '')}></i>
-                    </span>
+                        <div className="add-note-actions-container text-center">
+                            <div className="flex">
+                                <span onClick={() => { this.handleTypeChange("NoteText") }}>
+                                    <i className={"pointer fas fa-text notes-type-btn" + (type === 'NoteText' ? ' notes-type-btn-active' : '')}></i>
+                                </span>
 
-                    <span onClick={() => { this.handleTypeChange("NoteVideo") }}>
-                        <i className={"pointer fab fa-video notes-type-btn" + (type === 'NoteVideo' ? ' notes-type-btn-active' : '')}></i>
-                    </span>
+                                <span onClick={() => { this.handleTypeChange("NoteTodos") }}>
+                                    <i className={"pointer fas fa-list notes-type-btn" + (type === 'NoteTodos' ? ' notes-type-btn-active' : '')}></i>
+                                </span>
 
-                    <input type="submit" value="Add note!" />
-                </form >
+                                <span onClick={() => { this.handleTypeChange("NoteImg") }}>
+                                    <i className={"pointer fas fa-img notes-type-btn" + (type === 'NoteImg' ? ' notes-type-btn-active' : '')}></i>
+                                </span>
+
+                                <span onClick={() => { this.handleTypeChange("NoteVideo") }}>
+                                    <i className={"pointer fab fa-video notes-type-btn" + (type === 'NoteVideo' ? ' notes-type-btn-active' : '')}></i>
+                                </span>
+                            </div>
+
+                            <input type="submit" className="pointer" value="Add note!" />
+                        </div>
+                    </form >
+                </div>
             </React.Fragment>
         )
     }

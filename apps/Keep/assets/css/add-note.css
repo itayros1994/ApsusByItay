@@ -1,0 +1,116 @@
+/* ADDING NOTE */
+.add-note-container {
+  background-color: #eee;
+  border: 1px solid #222;
+  border-radius: 5px;
+  max-width: 96vw;
+  overflow: hidden;
+  margin-block-end: 1rem;
+}
+
+.add-note-container input,
+.add-note-container textarea {
+  border: 0;
+  padding: 5px;
+  font-size: 0.85rem;
+  width: 100%;
+  outline: none;
+}
+
+.add-note-container input:first-child {
+  font-size: 1.3rem;
+  font-weight: 600;
+  height: 2rem;
+}
+
+.add-note-container input:first-child + input,
+.add-note-container input:first-child + textarea {
+  border-block-start: 1px dotted #bbb;
+  height: 1.5rem;
+  transition: border ease-in-out 0.5s;
+}
+
+.add-note-container input:first-child:focus + input,
+.add-note-container input:first-child + input:focus,
+.add-note-container input:first-child + textarea:focus {
+  border-block-start: 1px solid purple;
+}
+
+.add-note-container textarea {
+  font-family: arial;
+  margin: 0;
+  resize: none;
+}
+
+.add-note-container textarea:focus {
+  height: 5rem !important;
+}
+
+.add-note-actions-container {
+  line-height: 3rem;
+}
+
+.add-note-actions-container div {
+  justify-content: center;
+}
+
+.add-note-actions-container div span:not(:first-child) {
+  margin-inline-start: 0.5rem;
+}
+
+.notes-type-btn {
+  cursor: pointer;
+  font-style: normal;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0.5rem 0.7rem;
+  transition: background-color, color ease-in-out 0.5s;
+}
+
+.notes-type-btn:hover {
+  background-color: rgba(128, 0, 128, 0.2);
+}
+
+.notes-type-btn-active {
+  background-color: purple !important;
+  color: white;
+}
+
+.add-note-actions-container input {
+  background-color: purple;
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-weight: 600;
+  padding: 0.5rem;
+  width: 7rem;
+}
+
+/* MEDIA QUEIRS */
+@media screen and (min-width: 500px) {
+  .add-note-actions-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .add-note-container {
+    max-width: 97vw;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .add-note-container {
+    max-width: 98vw;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .add-note-container {
+    max-width: 100%;
+  }
+}

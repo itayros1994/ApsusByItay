@@ -1,4 +1,4 @@
-import { NoteApp } from '../apps/Keep/cmps/NotesApp.jsx'
+import { NoteApp } from '../cmps/NotesApp.jsx'
 
 export function Notes() {
     return (
