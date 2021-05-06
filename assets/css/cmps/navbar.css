@@ -2,8 +2,10 @@
 
 .main-nav-container {
   background-color: #111;
-  padding: .5rem 1rem;
-  margin-bottom: .5rem;
+  padding: 0.5rem 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
 }
 
 .nav-logo {
@@ -28,11 +30,11 @@
   content: "\f00a";
 }
 
-.nav-links-container{
+.nav-links-container {
   display: none;
 }
 
-[aria-current="page"]{
+[aria-current="page"] {
   color: purple !important;
 }
 
@@ -45,7 +47,7 @@
   .nav-links-container {
     display: flex;
     gap: 1.5em;
-    padding: .5rem 0;
+    padding: 0.5rem 0;
     font-family: Lato-Black;
   }
 

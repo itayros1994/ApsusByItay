@@ -16,6 +16,7 @@ export function App() {
         <Router>
             <div className="page-layout-container">
                 <AppHeader />
+                <div class="main-spacer"></div>
 
                 <main className="container">
                     <Switch>

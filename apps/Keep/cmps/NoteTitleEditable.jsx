@@ -1,4 +1,5 @@
 import { noteService } from '../../services/notes-service.js'
+import { eventBusService } from '../......../services/event-bus-service.js'
 
 const { withRouter } = ReactRouterDOM
 
@@ -37,6 +38,7 @@ export class _NoteTitleEditable extends React.Component {
         }
         noteService.editNoteTitle(this.props.id, newTitle, isTodos)
             .then(() => {
+                eventBusService.emit('show-user-ntf', { msg: 'Note title updated ', type: 'ntf-update' })
                 this.setState({ isEditing: false, newTitle: '' })
                 this.props.history.push('/notes')
             })

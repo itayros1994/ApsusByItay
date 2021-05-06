@@ -6,6 +6,7 @@
 @import './font-awsome.css';
 @import './cmps/navbar.css';
 @import './cmps/footer.css';
+@import './cmps/Notifications.css';
 
 /* Keep css by Oren */
 @import '../../apps/Keep/assets/css/keep.css';

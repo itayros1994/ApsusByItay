@@ -39,3 +39,7 @@
 .pointer {
   cursor: pointer;
 }
+
+.hider{
+  display: none;
+}

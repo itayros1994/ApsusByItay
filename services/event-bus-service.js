@@ -4,10 +4,10 @@ function on(eventName, listener) {
         listener(detail);
     }
 
-    window.addEventListener(eventName, callListener);
+    window.addEventListener(eventName, callListener)
 
     return () => {
-        window.removeEventListener(eventName, callListener);
+        window.removeEventListener(eventName, callListener)
     }
 }
 

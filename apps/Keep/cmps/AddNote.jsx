@@ -1,4 +1,5 @@
 import { noteService } from '../../services/notes-service.js'
+import { eventBusService } from '../......../services/event-bus-service.js'
 
 const { withRouter } = ReactRouterDOM
 
@@ -17,6 +18,7 @@ export class _AddNote extends React.Component {
 
         noteService.addNote(type, title, txt)
             .then(() => {
+                eventBusService.emit('show-user-ntf', { msg: 'Note added successfully ', type: 'ntf-success' })
                 this.setState({ txt: '' })
                 this.setState({ title: '' })
                 this.props.history.push('/notes')

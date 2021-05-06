@@ -1,4 +1,5 @@
 import { noteService } from '../../services/notes-service.js'
+import { eventBusService } from '../......../services/event-bus-service.js'
 
 const { withRouter } = ReactRouterDOM
 
@@ -27,6 +28,7 @@ export class _NoteEditor extends React.Component {
     onTogglePin = (nId) => {
         noteService.togglePin(nId)
             .then(() => {
+                eventBusService.emit('show-user-ntf', { msg: 'Note pin status updated ', type: 'ntf-update' })
                 this.props.history.push('/notes')
             })
     }
@@ -34,6 +36,7 @@ export class _NoteEditor extends React.Component {
     onChangeBgcColor = (nId, color) => {
         noteService.changeBgcColor(nId, color)
             .then(() => {
+                eventBusService.emit('show-user-ntf', { msg: 'Note background color updated ', type: 'ntf-update' })
                 this.props.history.push('/notes')
             })
     }
@@ -41,12 +44,14 @@ export class _NoteEditor extends React.Component {
     onCopyToClipboard = (nId) => {
         noteService.getNoteTxtToCopy(nId)
             .then(() => {
+                eventBusService.emit('show-user-ntf', { msg: 'Note copied to clipboard ', type: 'ntf-success' })
             })
     }
 
     onDeleteNote = (nId) => {
         noteService.deleteNote(nId)
             .then(() => {
+                eventBusService.emit('show-user-ntf', { msg: 'Note deleted successfully ', type: 'ntf-alarm' })
                 this.props.history.push('/notes')
             })
     }

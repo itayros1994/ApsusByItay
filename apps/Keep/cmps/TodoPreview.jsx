@@ -1,4 +1,5 @@
 import { utilService } from '../........./services/util-service.js'
+import { eventBusService } from '../......../services/event-bus-service.js'
 import { noteService } from '../../services/notes-service.js'
 
 const { withRouter } = ReactRouterDOM
@@ -13,6 +14,7 @@ export class _TodoPreview extends React.Component {
     onDeleteTodo = (tId) => {
         noteService.deleteTodo(this.props.noteId, tId)
             .then(() => {
+                eventBusService.emit('show-user-ntf', { msg: 'Todo deleted ', type: 'ntf-alarm' })
                 this.props.history.push('/notes')
             })
     }
@@ -20,6 +22,7 @@ export class _TodoPreview extends React.Component {
     onToggleCheckTodo = (tId) => {
         noteService.toggleCheckTodo(this.props.noteId, tId)
             .then(() => {
+                eventBusService.emit('show-user-ntf', { msg: 'Todo status updated ', type: 'ntf-update' })
                 this.props.history.push('/notes')
             })
     }
@@ -43,6 +46,7 @@ export class _TodoPreview extends React.Component {
         const { noteId, todo } = this.props
         noteService.editTodo(noteId, todo.id, editedTodo)
             .then(() => {
+                eventBusService.emit('show-user-ntf', { msg: 'Todo updated ', type: 'ntf-update' })
                 this.setState({ isEditing: false, editedTodo: '' })
                 this.props.history.push('/notes')
             })

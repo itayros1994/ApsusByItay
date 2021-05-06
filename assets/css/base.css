@@ -13,3 +13,7 @@ body {
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
 }
+
+.main-spacer{
+  height: 4rem;
+}

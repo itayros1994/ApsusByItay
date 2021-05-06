@@ -1,4 +1,5 @@
 import { noteService } from '../../services/notes-service.js'
+import { eventBusService } from '../......../services/event-bus-service.js'
 
 const { withRouter } = ReactRouterDOM
 
@@ -31,6 +32,7 @@ export class _NoteTxtEditable extends React.Component {
         }
         noteService.editNoteTxt(this.props.id, newTxt)
             .then(() => {
+                eventBusService.emit('show-user-ntf', { msg: 'Note text updated ', type: 'ntf-update' })
                 this.setState({ isEditing: false, newTxt: '' })
                 this.props.history.push('/notes')
             })
