@@ -32,14 +32,21 @@ export class EmailApp extends React.Component {
         this.setState({ filterBy }, this.loadMails)
     }
 
+     onDeleteMail =(emailId) => {
+        mailService.deleteEmail(emailId)   
+          .then(() => {
+              this.loadMails()
+          })
+      }
+
     render() {
         return <div>
             <section>
-                <h1 className="email-topic">Emails Box</h1>
+                <h1 className="email-topic">gGays</h1>
                 <div className='page-content-container'>
                     <div className='page-content'>
                         <EmailFilter onSetFilter={this.onSetFilter} />
-                        <EmailList emails={this.state.emails}></EmailList>
+                        <EmailList onDeleteMail={this.onDeleteMail} emails={this.state.emails}></EmailList>
                         <EmailStatus emails={this.state.emails} />
                     </div>
                 </div>

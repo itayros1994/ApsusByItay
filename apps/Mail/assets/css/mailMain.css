@@ -7,15 +7,16 @@
 
 /* Add Mail Section */
 
-
-/* .page-content {
+.page-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: stretch;
+    align-content: stretch;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-.page-content-container {
+
+/* .page-content-container {
     display: flex;
 } */
 

@@ -1,7 +1,8 @@
 .unread-mails {
-    background-color: rgb(221, 107, 54);
+    background-color: rgb(190, 162, 162);
     width: 20rem;
     height: 3rem;
     font-size: 30px;
     padding: 5px;
+    margin: 20px;
 }

@@ -17,8 +17,8 @@ export class EmailCompose extends React.Component {
         const { sendBy, title, body } = this.state
 
         return <div>
-            <div className="add-new-mail-title">Add A New Email</div>
             <form className="add-email">
+            <div className="add-new-mail-title">New Mail</div>
                 <input className="input-detail" required type="text" value={sendBy} placeholder="your name" onChange={(ev) => this.setState({ sendBy: ev.target.value })} ></input>
                 <input className="input-detail" required type="text" value={title} placeholder="Title" onChange={(ev) => this.setState({ title: ev.target.value })}></input>
                 <textarea className="textarea-detail" required placeholder="write text here" name="textarea" value={body}

@@ -10,3 +10,28 @@
     font-size: 30px;
     float: right;
 }
+
+
+/* .mail-filter-container {
+    display: flex;
+    flex-direction: column;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 50px;
+    width: 30%;
+    float: right;
+} */
+
+.mail-filter-container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 20%;
+    float: left;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: flex-start;
+}

@@ -12,13 +12,14 @@ import { EmailCompose } from './apps/Mail/cmps/EmailCompose.jsx'
 
 
 export function App() {
+    
     return (
         <Router>
             <div className="page-layout-container">
                 <AppHeader />
                 <div class="main-spacer"></div>
 
-                <main className="container">
+                <main>
                     <Switch>
                         {/* MAIL ROUTES */}
                         <Route component={EmailDetails} path="/mail/:emailId" />
