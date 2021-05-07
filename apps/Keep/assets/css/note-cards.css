@@ -1,32 +1,128 @@
 /* NOTE CARD */
 .note-container {
-  border: 2px solid #111;
+  border: 1px solid #111;
   border-radius: 5px;
-  margin: 0 auto 1rem;
+  break-inside: avoid-column;
+  margin: 0 auto 1.5rem;
   overflow: hidden;
-  width: 300px;
+  width: 250px;
 }
 
+.note-preview-container {
+  white-space: pre-line;
+  word-break: break-all;
+}
+
+.note-title {
+  font-family: Lato-Black;
+  padding: 0.3rem;
+  text-transform: capitalize;
+  word-break: break-all;
+}
+
+.note-title div {
+  font-size: 1.2rem;
+}
+
+.note-edit-title-input {
+  background-color: transparent;
+  border: 0;
+  font-size: 1.1rem;
+  font-family: Lato-Black;
+  outline: none;
+}
+
+.note-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.note-preview-container iframe {
+  display: block;
+  width: 100%;
+}
+
+.note-edit-btn,
+.note-edit-confirm,
+.note-edit-cancel {
+  align-self: flex-start;
+  border: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  margin-inline-start: 0.5rem;
+  padding: 0.5rem;
+  transition: background-color ease-in-out 0.5s, color ease-in-out 0.5s;
+}
+
+.note-edit-btn,
+.note-edit-confirm,
+.note-edit-cancel {
+  color: white;
+}
+
+.note-edit-btn:hover,
+.note-edit-confirm:hover,
+.note-edit-cancel:hover {
+  background-color: black;
+  color: white;
+}
+
+.note-edit-btn::before {
+  content: "\f044";
+}
+
+.note-edit-confirm::before {
+  content: "\f00c";
+}
+
+.note-edit-cancel::before {
+  content: "\f00d";
+  padding: 0 0.1rem;
+}
+
+.note-text-content-container {
+  padding: 0.5rem;
+  min-height: 3rem;
+}
+
+.note-text-edit-textarea {
+  background-color: transparent;
+  border: 0;
+  resize: none;
+  outline: none;
+  overflow-y: auto;
+  height: 5rem;
+  width: 100%;
+}
+
+/* MEDIA QUERIES */
 @media screen and (min-width: 350px) {
   .note-container {
-    width: 340px;
+    width: 320px;
   }
 }
 
-@media screen and (min-width: 420px) {
+@media screen and (min-width: 550px) {
   .note-container {
-    width: 400px;
+    width: 250px;
   }
 }
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 690px) {
   .note-container {
-    width: 350px;
+    width: 320px;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 820px) {
   .note-container {
-    width: 380px;
+    width: 250px;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .note-container {
+    width: 100%;
   }
 }

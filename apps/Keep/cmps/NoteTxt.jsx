@@ -5,10 +5,6 @@ import { NoteTxtEditable } from './NoteTxtEditable.jsx'
 const { withRouter } = ReactRouterDOM
 
 export class _NoteTxt extends React.Component {
-    state = {
-    }
-
-
     render() {
         const { id, info, style } = this.props.note
 

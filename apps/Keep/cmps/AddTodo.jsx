@@ -1,4 +1,5 @@
 import { noteService } from '../../services/notes-service.js'
+import { eventBusService } from '../../../../services/event-bus-service.js'
 
 const { withRouter } = ReactRouterDOM
 
@@ -22,10 +23,11 @@ export class _AddTodo extends React.Component {
     onAddNewTodo = () => {
         const { addTodo } = this.state
         noteService.addTodo(this.props.noteId, addTodo)
-        .then(() => {
-            this.toggleTodo()
-            this.props.history.push('/notes')
-        })
+            .then(() => {
+                eventBusService.emit('show-user-ntf', { msg: 'Todo added successfully ', type: 'ntf-success' })
+                this.toggleTodo()
+                this.props.history.push('/notes')
+            })
     }
 
     render() {
@@ -33,11 +35,13 @@ export class _AddTodo extends React.Component {
         return (
             <section>
                 {isAdding &&
-                    <React.Fragment>
-                        <input type="text" placeholder="Add todo" name="addTodo" value={addTodo} onChange={this.handleChange} />
-                        <button className="fas pointer note-todo-add-btn" onClick={this.onAddNewTodo}></button>
-                        <button className="fas pointer note-todo-clear-btn" onClick={this.toggleTodo}></button>
-                    </React.Fragment>
+                    <section className="flex space-between align-center note-title">
+                        <input className="note-edit-todo-input" type="text" placeholder="Add todo" name="addTodo" value={addTodo} onChange={this.handleChange} />
+                        <div>
+                            <button className="pointer fas note-edit-confirm" onClick={this.onAddNewTodo}></button>
+                            <button className="pointer fas note-edit-cancel" onClick={this.toggleTodo}></button>
+                        </div>
+                    </section>
                 }
 
                 {!isAdding &&

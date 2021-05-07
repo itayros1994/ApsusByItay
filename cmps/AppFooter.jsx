@@ -1,9 +1,7 @@
 const { withRouter } = ReactRouterDOM
 
 class _AppFooter extends React.Component {
-
     render() {
-
         return (
             <footer>
                 <section className="container text-center">
@@ -12,7 +10,6 @@ class _AppFooter extends React.Component {
             </footer>
         )
     }
-
 }
 
 export const AppFooter = withRouter(_AppFooter)

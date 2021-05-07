@@ -3,8 +3,6 @@ import { AddNote } from '/AddNote.jsx'
 import { NoteFilter } from '/NoteFilter.jsx'
 import { FilterCtg } from '/FilterCtg.jsx'
 import { NotePreview } from '/NotePreview.jsx'
-// import { eventBusService } from '../......../services/event-bus-service.js'
-import { eventBusService } from '../../../services/event-bus-service.js'
 
 export class NoteApp extends React.Component {
     state = {
@@ -24,7 +22,6 @@ export class NoteApp extends React.Component {
         noteService.query(filterTxt, ctg)
             .then(notes => {
                 this.setState({ notes })
-                eventBusService.emit('notes-count', this.state.notes.length)
             })
     }
 
@@ -60,6 +57,7 @@ export class NoteApp extends React.Component {
                 <div className="text-center notes-filter-container">
                     <NoteFilter onSetFilter={this.onSetFilter} />
                     <FilterCtg onSetCtg={this.onSetCtg} />
+                    <section className="fas notes-counter-container">(Showing {notes.length} notes)</section>
                 </div>
 
                 {this.filterPinned.length >= 1 &&

@@ -4,9 +4,7 @@ import { NoteTodos } from './NoteTodos.jsx'
 import { NoteVideo } from './NoteVideo.jsx'
 
 export class NotePreview extends React.Component {
-
     DynamicCmp = (props) => {
-
         switch (this.noteType) {
             case 'NoteText':
                 return <NoteTxt {...props} />
