@@ -12,16 +12,16 @@
     display: flex;
     justify-content: space-between;
     border: 5px solid rgb(0, 0, 0);
-    font-size: 25px;
-    width: 92%;
-    height: 3.5rem;
-    background-color: rgb(212, 226, 173);
+    font-size: 20px;
+    width: 97%;
+    height: 3.3rem;
+    background-color: rgb(227, 252, 255);
     opacity: 70%;
     font-family: 'Times New Roman', Times, serif;
-    border-radius: 2%;
+    border-radius: 5px;
     margin-bottom: 10px;
     padding: 10px;
-    border-radius: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 :hover.email-content {
@@ -53,3 +53,14 @@
     margin: auto;
     border-left: solid black 4px;
 }
+
+.email-read-bgc {
+    background-color: rgb(59, 216, 80);
+}
+
+.read-sign {
+    margin: 5px;
+}
+
+
+/* .email-star {} */

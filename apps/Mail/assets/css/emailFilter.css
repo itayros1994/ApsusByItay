@@ -1,21 +1,28 @@
 .mail-filter-by {
-    font-size: 25px;
+    font-size: 15px;
     margin: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 .input-filter-name {
-    font-size: 25px;
+    font-size: 15px;
     width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 .mail-filter-container {
+    border-bottom: black 2px solid;
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     padding: 10px;
-    width: 20%;
+    width: 100%;
     float: left;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     flex-wrap: nowrap;
     align-content: center;
-    align-items: flex-start;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 0.8%;
 }

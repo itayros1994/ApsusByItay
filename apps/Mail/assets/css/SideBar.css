@@ -5,34 +5,38 @@
     margin: 10px;
     border-right: 2px solid black;
     cursor: pointer;
-    background-color: orange;
+    background-color: white;
+    border-radius: 5px;
 }
 
 .inbox {
     width: 100px;
-    height: 30px;
+    height: 40px;
     margin: 10px;
     border-radius: 5%;
     border: 1px solid black;
     text-align: center;
+    font-family: Lato-Black;
 }
 
 .stared {
     width: 100px;
-    height: 30px;
+    height: 40px;
     margin: 10px;
     border-radius: 5%;
     border: 1px solid black;
     text-align: center;
+    font-family: Lato-Black;
 }
 
 .pinned {
     width: 100px;
-    height: 30px;
+    height: 40px;
     margin: 10px;
     border-radius: 5%;
     border: 1px solid black;
     text-align: center;
+    font-family: Lato-Black;
 }
 
 .inbox:hover {

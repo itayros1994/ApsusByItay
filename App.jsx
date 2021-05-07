@@ -9,6 +9,7 @@ import { AddNoteFromMail } from './apps/Keep/pages/AddNoteFromMail.jsx'
 import { EmailDetails } from './apps/Mail/cmps/EmailDetails.jsx'
 import {EmailApp} from './apps/Mail/Pages/EmailApp.jsx'
 import {EmailCompose} from './apps/Mail/cmps/EmailCompose.jsx'
+import {EmailStars} from './apps/Mail/cmps/EmailStars.jsx'
  
 
 export function App() {
@@ -21,8 +22,9 @@ export function App() {
                 <main className="container">
                     <Switch>
                         {/* MAIL ROUTES */}
-                        <Route component={EmailDetails} path="/mail/:emailId" />
+                        {/* <Route component={EmailDetails} path="/mail/:emailId" /> */}
                         <Route component={EmailApp} path="/mail" />
+                        <Route component={EmailStars} path="/stars" />
                         <Route component={EmailCompose} path="/compose" />
 
                         

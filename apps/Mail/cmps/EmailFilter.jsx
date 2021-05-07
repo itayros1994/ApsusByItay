@@ -20,16 +20,16 @@ export class EmailFilter extends React.Component {
         const { text } = this.state.filterBy
         return (
             <div className="mail-filter-container">
+                <div>
+                    <label  htmlFor="FilterByText"></label>
+                    <input placeholder="Search Email" className="input-filter-name" type="text" name="text" value={text} onChange={this.handleChange} />
+                </div>
                 <select className="mail-filter-by" name="readStatus" onChange={this.handleChange}>
                     <option value="all">All</option>
                     <option value="read">Read</option>
                     <option value="unread">Unread</option>
                 </select>
 
-                <div>
-                    <label  htmlFor="FilterByText"></label>
-                    <input placeholder="Search Email" className="input-filter-name" type="text" name="text" value={text} onChange={this.handleChange} />
-                </div>
             </div>
         )
     }

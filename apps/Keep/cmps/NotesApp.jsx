@@ -3,8 +3,8 @@ import { AddNote } from '/AddNote.jsx'
 import { NoteFilter } from '/NoteFilter.jsx'
 import { FilterCtg } from '/FilterCtg.jsx'
 import { NotePreview } from '/NotePreview.jsx'
-import { eventBusService } from '../......../services/event-bus-service.js'
-
+// import { eventBusService } from '../......../services/event-bus-service.js'
+import { eventBusService } from '../../../services/event-bus-service.js'
 
 export class NoteApp extends React.Component {
     state = {

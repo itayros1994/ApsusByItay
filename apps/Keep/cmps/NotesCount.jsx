@@ -1,4 +1,5 @@
-import { eventBusService } from '../......../services/event-bus-service.js'
+// import { eventBusService } from '../......../services/event-bus-service.js'
+import {eventBusService} from '../../../services/event-bus-service.js'
 
 export class NotesCount extends React.Component {
     removeEvent;
