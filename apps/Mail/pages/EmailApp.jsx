@@ -45,7 +45,7 @@ export class EmailApp extends React.Component {
         return (
             <div className="email-main-container">
                 <SideBar emails={this.state.emails}></SideBar>
-                <div class="actions-list-container">
+                <div className="actions-list-container">
                     <EmailFilter onSetFilter={this.onSetFilter} />
                     <EmailList onDeleteMail={this.onDeleteMail} emails={this.state.emails}></EmailList>
                 </div>

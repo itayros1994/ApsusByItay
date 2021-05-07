@@ -39,6 +39,7 @@
 .add-note-container textarea {
   font-family: arial;
   margin: 0;
+  overflow-y: auto;
   resize: none;
 }
 
