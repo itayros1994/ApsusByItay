@@ -17,7 +17,6 @@ export class FilterCtg extends React.Component {
     render() {
         return (
             <section className="notes-ctg-filter-container">
-                <span className="fas">Filter notes type: </span>
                 <select className="pointer notes-ctg-filter-select" onChange={this.onChangeSelect}>
                     <option value="">All</option>
                     <option value="NoteText">Text</option>

@@ -1,7 +1,7 @@
 /* NAVBAR */
 
 .main-nav-container {
-    background-color: #111;
+    background-color: #222;
     padding: 0.5rem 0;
     position: fixed;
     width: 100%;
@@ -35,7 +35,7 @@
 }
 
 [aria-current="page"] {
-    color: purple !important;
+    color: #8c2c98 !important;
 }
 
 
@@ -52,7 +52,7 @@
         font-family: Lato-Black;
     }
     .nav-links-container a {
-        color: white;
+        color: #eee;
         text-decoration: none;
         transition: color ease-in-out 0.5s;
     }

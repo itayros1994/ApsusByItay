@@ -1,11 +1,9 @@
 /* NOTES LIST */
 .note-pinned-title,
 .note-not-pinned-title {
-  font-size: 2rem;
-  font-weight: 600;
-  font-family: Kanit-Bold;
-  letter-spacing: 1px;
-  margin-block-start: 2rem;
+  font-family: Lato-Black;
+  letter-spacing: 2px;
+  margin: 1.5rem 0 0.5rem;
 }
 
 .note-pinned-title::before,
@@ -17,7 +15,11 @@
 }
 
 .note-pinned-title::before {
-  color: purple;
+  color: #8c2c98;
+}
+
+.notes-container {
+  column-fill: balance;
 }
 
 /* MEDIA QUERIES */
@@ -27,8 +29,20 @@
   }
 }
 
-@media screen and (min-width: 820px){
+@media screen and (min-width: 780px) {
   .notes-container {
     column-count: 3;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .notes-container {
+    column-count: 4;
+  }
+}
+
+@media screen and (min-width: 1310px) {
+  .notes-container {
+    column-count: 5;
   }
 }

@@ -56,7 +56,7 @@ export class _NoteTitleEditable extends React.Component {
                 {!isEditing &&
                     <section className="flex space-between align-center note-title">
                         <div>{title}</div>
-                        <button className="pointer fas note-edit-btn" onClick={this.toggleEditing}></button>
+                        <button className="pointer fas note-edit-btn note-edit-title-btn" onClick={this.toggleEditing}></button>
                     </section>}
 
 

@@ -1,24 +1,16 @@
 .note-from-mail-container {
-  border: 1px solid black;
+  border: 1px solid #222;
   border-radius: 5px;
   margin: 0 auto;
   overflow: hide;
   width: max-content;
 }
 
-.note-from-mail-title {
-  background-color: purple;
-  color: white;
+.note-from-mail-question {
+  background-color: #8c2c98;
+  color: #eee;
   font-size: 1.2rem;
-  font-weight: 600;
   font-family: Lato-Black;
   letter-spacing: 1px;
   padding: 0.5rem;
-}
-
-/* MEDIA QUERIES */
-@media screen and (max-width: 450px){
-    .note-from-mail-title{
-        word-break: break-all;
-    }
 }

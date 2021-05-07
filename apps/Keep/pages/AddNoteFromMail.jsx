@@ -21,7 +21,8 @@ export class AddNoteFromMail extends React.Component {
 
         return (
             <section className="note-from-mail-container">
-                <div className="note-from-mail-title">Do you want to add the following note?</div>
+                <div className="note-from-mail-question">Do you want to add the following note?</div>
+                <div className="note-from-mail-title">Title</div>
                 title: {noteTitle}<br />
                 note: {noteContent}<br />
                 <button onClick={this.onAddNote}>ADD</button>

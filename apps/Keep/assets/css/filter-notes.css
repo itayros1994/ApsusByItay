@@ -1,11 +1,14 @@
 /* FILTER NOTES */
-.notes-search-container {
-  margin-block-end: 0.5rem;
+
+.notes-filter-container{
+  height: 2rem;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 label[for="notes-search-input"]::before {
-  content: "\f002";
-  color: purple;
+  content: "\f00e";
+  color: #8c2c98;
   padding: 0 0.2rem 2px 0;
 }
 
@@ -21,8 +24,6 @@ label[for="notes-search-input"]:hover {
   background-color: transparent;
   border: 0;
   border-block-end: 2px solid #222;
-  font-size: 1.1rem;
-  font-weight: 600;
   padding: 0 0.2rem;
   width: 10rem;
   outline: none;
@@ -30,7 +31,7 @@ label[for="notes-search-input"]:hover {
 }
 
 .notes-filter-container input:focus {
-  border-block-end: 2px solid purple;
+  border-block-end: 2px solid #8c2c98;
   width: 15rem;
 }
 
@@ -41,7 +42,7 @@ label[for="notes-search-input"]:hover {
 .notes-filter-cancel-btn {
   opacity: 0;
   position: absolute;
-  right: 3px;
+  right: 10px;
   top: 2px;
   transition: opacity ease-in-out 0.5s;
 }
@@ -50,30 +51,16 @@ label[for="notes-search-input"]:hover {
   content: "\f00d";
 }
 
-.notes-ctg-filter-container {
-  margin-block-end: 0.5rem;
-}
-
-.notes-ctg-filter-container span:first-child {
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-.notes-ctg-filter-container span:first-child:before {
-  content: "\f0b0";
-  color: purple;
-  padding-inline-end: 0.3rem;
-}
-
 .notes-ctg-filter-select {
   background-color: transparent;
   border: 0;
   border-block-end: 2px solid #222;
   appearance: none;
+  outline: none;
+  width: 5rem;
+  transition: all ease-in-out 0.5s;
 }
 
-.notes-counter-container::before {
-  content: "\f06e";
-  color: purple;
-  padding-inline-end: 0.3rem;
+.notes-ctg-filter-select:focus{
+  border-block-end: 2px solid #8c2c98;
 }

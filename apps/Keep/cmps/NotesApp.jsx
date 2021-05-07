@@ -54,15 +54,15 @@ export class NoteApp extends React.Component {
         return (
             <section>
                 <AddNote />
-                <div className="text-center notes-filter-container">
+                <div className="notes-filter-container flex ">
                     <NoteFilter onSetFilter={this.onSetFilter} />
                     <FilterCtg onSetCtg={this.onSetCtg} />
-                    <section className="fas notes-counter-container">(Showing {notes.length} notes)</section>
+                    <section className="notes-counter-container">({notes.length})</section>
                 </div>
 
                 {this.filterPinned.length >= 1 &&
                     <React.Fragment>
-                        <div className="text-center note-pinned-title">Pinned:</div>
+                        <div className="note-pinned-title">Pinned:</div>
                         <div className="notes-container">
                             {this.filterPinned.map(note => {
                                 return <NotePreview note={note} key={note.id} />
@@ -72,7 +72,7 @@ export class NoteApp extends React.Component {
 
                 {this.filterNotPinned.length >= 1 &&
                     <React.Fragment>
-                        <div className="text-center note-not-pinned-title">Not pinned:</div>
+                        <div className="note-not-pinned-title">Not pinned:</div>
                         <div className="notes-container">
                             {this.filterNotPinned.map(note => {
                                 return <NotePreview note={note} key={note.id} />
