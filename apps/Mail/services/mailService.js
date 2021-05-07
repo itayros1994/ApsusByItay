@@ -16,12 +16,14 @@ export const mailService = {
     getMails,
     addMail,
     getMailById,
-    addComment
+    addComment,
+    addStar
 
 }
 
 
 function getMails(filterBy) {
+
     if (filterBy) {
         var { text, readStatus } = filterBy
 
@@ -66,19 +68,21 @@ function isEmailRead(emailId) {
     return Promise.resolve()
 }
 
+function addStar(emailId, star) {
+    var mail = getMailById(emailId)
+    mail.isStar = true
+    storageService.saveToStorage(_LOCAL_STORAGE_KEY, mails)
+
+}
+
 function addComment(emailId, replay) {
     var mail = getMailById(emailId)
     mail.replays.push(replay)
     storageService.saveToStorage(_LOCAL_STORAGE_KEY, mails)
+    return Promise.resolve()
 }
 
-// get time
-var today = new Date();
-var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-var dateTime = date + ' ' + time;
-
 function addMail(sendBy, subject, body) {
-    mails.push({ id: utilService.makeId(), sendBy, subject, body, isRead: false, sentAt: dateTime, replays: [] })
+    mails.push({ id: utilService.makeId(), sendBy, subject, body, isRead: false, sentAt: new Date(), replays: [], isStar: false })
     storageService.saveToStorage(_LOCAL_STORAGE_KEY, mails)
 }

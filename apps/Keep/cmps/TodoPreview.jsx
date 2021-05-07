@@ -1,5 +1,7 @@
 import { utilService } from '../........./services/util-service.js'
-import { eventBusService } from '../......../services/event-bus-service.js'
+// import { eventBusService } from '../......../services/event-bus-service.js'
+import {eventBusService} from '../../../services/event-bus-service.js'
+
 import { noteService } from '../../services/notes-service.js'
 
 const { withRouter } = ReactRouterDOM

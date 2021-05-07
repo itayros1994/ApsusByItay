@@ -1,71 +1,73 @@
-.email-container {
-    display: flex;
-    cursor: pointer;
-    font-size: 30px;
-    height: 90%;
-    width: 100%;
-    margin: 5px;
-    background-color: rgb(87, 126, 122);
-    margin: auto;
-    margin-top: 50px;
-}
-
-.email {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 20px;
-    height: 40rem;
-    width: 100%;
-    padding: 20px;
-    margin: 10px;
-    border: 1px solid black;
-}
-
-.delete-email {
-    float: left;
-    border: 3px solid black;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    text-decoration: none;
-    color: blue;
-}
-
-.back-mailbox {
-    float: right;
-    border: 3px solid black;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    text-decoration: none;
-    color: blue;
-}
-
-.back-mailbox:hover {
-    background-color: rgb(131, 193, 243);
-    transition: 0.5s;
-}
-
-.email-body {
-    background-color: rgb(79, 190, 28);
-    border: 2px solid black;
-}
-
-.email-replay {
-    background-color: rgb(111, 193, 218);
-    border: 2px solid black;
-}
-
-.inputs-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.comment-button {
-    font-size: 20px;
-    border-radius: 8%;
-    width: 200px;
-    margin: 5px;
-}
+ .email-container {
+     display: flex;
+     cursor: pointer;
+     font-size: 30px;
+     width: 65%;
+     background-color: rgb(226, 248, 207);
+     margin: auto;
+     margin-top: 50px;
+ }
+ 
+ .email {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-evenly;
+     margin: 20px;
+     height: 40rem;
+     width: 100%;
+     padding: 20px;
+     margin: 5px;
+     border: 1px solid black;
+ }
+ 
+ .delete-email {
+     float: left;
+     border: 3px solid black;
+     width: 50px;
+     height: 50px;
+     text-align: center;
+     text-decoration: none;
+     color: blue;
+ }
+ 
+ .back-mailbox {
+     float: right;
+     border: 3px solid black;
+     width: 50px;
+     height: 50px;
+     text-align: center;
+     text-decoration: none;
+     color: blue;
+ }
+ 
+ .back-mailbox:hover {
+     background-color: rgb(181, 255, 245);
+     transition: 0.5s;
+     font-size: 15px;
+ }
+ 
+ .email-body {
+     background-color: rgb(191, 230, 255);
+     border: 2px solid black;
+     font-size: 20px;
+ }
+ 
+ .email-replay {
+     background-color: rgb(89, 147, 165);
+     border: 2px solid black;
+     font-size: 20px;
+ }
+ 
+ .inputs-container {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     font-size: 20px;
+ }
+ 
+ .comment-button {
+     font-size: 20px;
+     border-radius: 8%;
+     width: 200px;
+     margin: 5px;
+ }
