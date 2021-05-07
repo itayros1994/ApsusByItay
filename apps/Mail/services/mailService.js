@@ -82,7 +82,9 @@ function addComment(emailId, replay) {
     return Promise.resolve()
 }
 
+var time = new Date();
+
 function addMail(sendBy, subject, body) {
-    mails.push({ id: utilService.makeId(), sendBy, subject, body, isRead: false, sentAt: new Date(), replays: [], isStar: false })
+    mails.push({ id: utilService.makeId(), sendBy, subject, body, isRead: false, sentAt: time.toLocaleString(), replays: [], isStar: false })
     storageService.saveToStorage(_LOCAL_STORAGE_KEY, mails)
 }

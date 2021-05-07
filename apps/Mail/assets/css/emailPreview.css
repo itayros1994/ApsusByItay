@@ -11,22 +11,22 @@
     cursor: pointer;
     display: flex;
     justify-content: space-between;
-    border: 5px solid rgb(0, 0, 0);
     font-size: 20px;
     width: 97%;
     height: 3.3rem;
-    background-color: rgb(227, 252, 255);
+    background-color: rgb(255, 255, 255, 0.902);
     opacity: 70%;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Helvetica, Arial, sans-serif;
     border-radius: 5px;
     margin-bottom: 10px;
     padding: 10px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
 }
 
 :hover.email-content {
-    background-color: rgb(209, 195, 170);
+    /* background-color: rgb(209, 195, 170); */
     transition: 0.3s;
+    border: 3px solid rgb(0, 0, 0);
 }
 
 .email-send-by a {
@@ -43,6 +43,7 @@
 
 .email-subject-prev {
     font-size: 20px;
+    font-weight: bold;
 }
 
 .email-body-prev {
@@ -55,11 +56,15 @@
 }
 
 .email-read-bgc {
-    background-color: rgb(59, 216, 80);
+    background-color: rgba(140, 148, 148, 0.294);
 }
 
 .read-sign {
     margin: 5px;
+}
+
+.from {
+    font-weight: bold;
 }
 
 

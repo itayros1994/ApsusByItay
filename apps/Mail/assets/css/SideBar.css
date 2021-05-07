@@ -17,6 +17,7 @@
     border: 1px solid black;
     text-align: center;
     font-family: Lato-Black;
+    border-radius: 4px;
 }
 
 .stared {
@@ -27,6 +28,7 @@
     border: 1px solid black;
     text-align: center;
     font-family: Lato-Black;
+    border-radius: 4px;
 }
 
 .pinned {
@@ -37,6 +39,7 @@
     border: 1px solid black;
     text-align: center;
     font-family: Lato-Black;
+    border-radius: 4px;
 }
 
 .inbox:hover {
