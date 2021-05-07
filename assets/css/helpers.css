@@ -2,6 +2,7 @@
 .container {
   width: 100%;
   max-width: 1400px;
+  padding: 0 1rem;
   margin: 0 auto;
 }
 
@@ -46,4 +47,12 @@
 
 .hider{
   display: none;
+}
+
+.fl-uppercase::first-letter{
+  text-transform: uppercase;
+}
+
+.float-right{
+  float: right;
 }

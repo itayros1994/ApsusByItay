@@ -4,11 +4,6 @@ import { NoteTitleEditable } from './NoteTitleEditable.jsx'
 const { withRouter } = ReactRouterDOM
 
 export class _NoteImg extends React.Component {
-    state = {
-
-    }
-
-
     render() {
         const { id, info, style } = this.props.note
 

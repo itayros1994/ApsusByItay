@@ -1,6 +1,3 @@
-// import { eventBusService } from '../......../services/event-bus-service.js'
-import { NotesCount } from './NotesCount.jsx'
-
 export class NoteFilter extends React.Component {
     state = {
         filter: ''
@@ -35,7 +32,6 @@ export class NoteFilter extends React.Component {
                     <input type="text" id="notes-search-input" placeholder="Search notes" name="filter" value={filter} onChange={this.handleChange} />
                     <i onClick={this.onClearFilter} className="pointer fas notes-filter-cancel-btn"></i>
                 </span>
-                (<NotesCount />)
             </section>
         )
     }

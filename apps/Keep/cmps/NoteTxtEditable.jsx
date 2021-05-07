@@ -1,6 +1,5 @@
 import { noteService } from '../../services/notes-service.js'
-// import { eventBusService } from '../......../services/event-bus-service.js'
-import {eventBusService} from '../../../services/event-bus-service.js'
+import { eventBusService } from '../../../../services/event-bus-service.js'
 
 const { withRouter } = ReactRouterDOM
 
@@ -47,19 +46,19 @@ export class _NoteTxtEditable extends React.Component {
         const { txt } = this.props
 
         return (
-            <section>
+            <section className="note-text-content-container">
                 {!isEditing &&
                     <React.Fragment>
-                        <div>{this.props.txt}</div>
-                        <button onClick={this.toggleEdit}>Edit</button>
+                        <button className="pointer float-right fas note-edit-btn" onClick={this.toggleEdit}></button>
+                        <div className="fl-uppercase">{this.props.txt}</div>
                     </React.Fragment>
                 }
 
                 {isEditing &&
                     <React.Fragment>
-                        <textarea type="text" placeholder={txt} name="newTxt" value={newTxt} onChange={this.handleChange} />
-                        <button onClick={this.cancelChange}>X</button>
-                        <button onClick={this.onChangeText}>V</button>
+                        <textarea className="note-text-edit-textarea" type="text" placeholder={txt} name="newTxt" value={newTxt} onChange={this.handleChange} />
+                        <button className="pointer fas note-edit-confirm" onClick={this.onChangeText}></button>
+                        <button className="pointer fas note-edit-cancel" onClick={this.cancelChange}></button>
                     </React.Fragment>
                 }
             </section>

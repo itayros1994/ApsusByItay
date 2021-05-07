@@ -1,0 +1,78 @@
+.note-todo-container {
+  padding: 0.5rem;
+}
+
+.note-todo-container {
+  margin-block-end: 1rem;
+}
+
+.note-todo-check-btn,
+.note-todo-uncheck-btn,
+.note-edit-todo-delete,
+.note-todo-add-btn {
+  color: white;
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  padding: 0.5rem;
+  transition: background-color ease-in-out 0.5s, color ease-in-out 0.5s;
+}
+
+.note-todo-check-btn:hover,
+.note-todo-uncheck-btn:hover,
+.note-edit-todo-delete:hover,
+.note-todo-add-btn:hover {
+  background-color: black;
+}
+
+.note-todo-check-btn,
+.note-todo-uncheck-btn{
+  margin-inline-end: 0.5rem;
+}
+
+
+.note-todo-check-btn::before {
+  content: "\f46c";
+}
+
+.note-todo-uncheck-btn::before {
+  content: "\f328";
+}
+
+.note-todo-check-btn:hover {
+  color: red;
+}
+
+.note-todo-uncheck-btn:hover {
+  color: green;
+}
+
+.note-todo-text-done {
+  text-decoration: line-through;
+}
+
+.note-todo-text-not-done {
+  font-weight: 600;
+}
+
+.note-todo-done-text {
+  margin: 0.5rem 0 0 0.5rem;
+}
+
+.note-edit-todo-delete::before {
+  content: "\f1f8";
+}
+
+.note-edit-todo-input {
+  background-color: transparent;
+  border: 0;
+  outline: none;
+}
+
+.note-todo-add-btn{
+  margin: 0 0 0.5rem 0.5rem;
+}
+
+.note-todo-add-btn::before {
+  content: "\f067";
+}

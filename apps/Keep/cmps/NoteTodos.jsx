@@ -6,11 +6,6 @@ import { AddTodo } from './AddTodo.jsx'
 const { withRouter } = ReactRouterDOM
 
 export class _NoteTodos extends React.Component {
-    state = {
-
-    }
-
-
     render() {
         const { id, info, style } = this.props.note
 

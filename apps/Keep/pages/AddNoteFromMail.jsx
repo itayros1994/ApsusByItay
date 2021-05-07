@@ -1,13 +1,7 @@
 import { noteService } from '../services/notes-service.js'
-// import { eventBusService } from '../......../services/event-bus-service.js'
-import {eventBusService} from '../../../services/event-bus-service.js'
+import { eventBusService } from '../../../services/event-bus-service.js'
 
 export class AddNoteFromMail extends React.Component {
-    state = {
-
-    }
-
-
     onAddNote = () => {
         const { noteTitle, noteContent } = this.props.match.params
         noteService.addNote('NoteText', noteTitle, noteContent)

@@ -1,5 +1,5 @@
-import { utilService } from '../...../services/util-service.js'
-import { storageService } from '../...../services/storage-service.js'
+import { utilService } from '../../../services/util-service.js'
+import { storageService } from '../../../services/storage-service.js'
 
 export const noteService = {
     query,
@@ -27,6 +27,7 @@ function query(filterTxt, ctg) {
         notes.forEach(note => {
             switch (note.type) {
                 case 'NoteText':
+                    if (note.info.title.toLowerCase().includes(filterTxt)) filtered.push(note)
                     if (note.info.txt.toLowerCase().includes(filterTxt)) filtered.push(note)
                     break
 
@@ -270,7 +271,6 @@ function _getNoteType(idx) {
     return notes[idx].type
 }
 
-
 /* Create basic notes list - each note type has one note example */
 function _createNotesLst() {
     notes = [
@@ -316,18 +316,18 @@ function _createNotesLst() {
             }
         },
 
-        {
-            id: utilService.makeId(),
-            type: "NoteVideo",
-            isPinned: false,
-            info: {
-                title: "note title",
-                videoUrl: "https://www.youtube.com/watch?v=vafFqQvSe3U"
-            },
-            style: {
-                backgroundColor: utilService.getRandomColor()
-            }
-        },
+        // {
+        //     id: utilService.makeId(),
+        //     type: "NoteVideo",
+        //     isPinned: false,
+        //     info: {
+        //         title: "note title",
+        //         videoUrl: "https://www.youtube.com/watch?v=vafFqQvSe3U"
+        //     },
+        //     style: {
+        //         backgroundColor: utilService.getRandomColor()
+        //     }
+        // },
 
         {
             id: utilService.makeId(),

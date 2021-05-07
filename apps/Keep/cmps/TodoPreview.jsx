@@ -1,7 +1,5 @@
-import { utilService } from '../........./services/util-service.js'
-// import { eventBusService } from '../......../services/event-bus-service.js'
-import {eventBusService} from '../../../services/event-bus-service.js'
-
+import { utilService } from '../../../../services/util-service.js'
+import { eventBusService } from '../../../../services/event-bus-service.js'
 import { noteService } from '../../services/notes-service.js'
 
 const { withRouter } = ReactRouterDOM
@@ -62,27 +60,30 @@ export class _TodoPreview extends React.Component {
         const { isEditing, editedTodo } = this.state
 
         return (
-            <section>
+            <section className="note-todo-container">
                 {!isEditing &&
                     <React.Fragment>
-                        <span className={doneAt ? 'note-todo-text-done' : 'note-todo-text-not-done'}>
-                            {txt}
-                            {(doneAt) ? `(${utilService.returnDateFromTs(doneAt)})` : ''}
-                        </span>
-
-                        <span className={'pointer fas ' + (doneAt ? 'note-todo-check' : 'note-todo-uncheck')}
+                        <span className={'pointer fas ' + (doneAt ? 'note-todo-check-btn' : 'note-todo-uncheck-btn')}
                             onClick={() => this.onToggleCheckTodo(id)}></span>
-                        <button onClick={this.toggleEditing}>Edit</button>
-                        <span className="fas note-editor-delete pointer" onClick={() => this.onDeleteTodo(id)}></span>
+
+                        <button className="pointer float-right fas note-edit-btn" onClick={this.toggleEditing}></button>
+                        <span className="pointer float-right fas note-edit-todo-delete" onClick={() => this.onDeleteTodo(id)}></span>
+
+                        <span className={'fl-uppercase ' + (doneAt ? 'note-todo-text-done' : 'note-todo-text-not-done')}>
+                            {txt}
+                        </span>
+                        {(doneAt) ? <div className="note-todo-done-text">({utilService.returnDateFromTs(doneAt)})</div> : ''}
                     </React.Fragment>
                 }
 
                 {isEditing &&
-                    <React.Fragment>
-                        <input type="text" placeholder={txt} name="editedTodo" value={editedTodo} onChange={this.handleChange} />
-                        <button onClick={this.clearEditedTodo}>X</button>
-                        <button onClick={this.onChangeTodo}>V</button>
-                    </React.Fragment>
+                    <section className="flex space-between align-center note-title">
+                        <input className="note-edit-todo-input" type="text" placeholder={txt} name="editedTodo" value={editedTodo} onChange={this.handleChange} />
+                        <div>
+                            <button className="pointer fas note-edit-confirm" onClick={this.onChangeTodo}></button>
+                            <button className="pointer fas note-edit-cancel" onClick={this.clearEditedTodo}></button>
+                        </div>
+                    </section>
                 }
             </section>
         )

@@ -11,7 +11,6 @@ class _AppHeader extends React.Component {
     }
 
     render() {
-
         return (
             <React.Fragment>
                 <nav className="main-nav-container">
@@ -36,7 +35,6 @@ class _AppHeader extends React.Component {
             </React.Fragment>
         )
     }
-
 }
 
 export const AppHeader = withRouter(_AppHeader)

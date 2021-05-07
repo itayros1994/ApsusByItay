@@ -1,6 +1,6 @@
 import { noteService } from '../../services/notes-service.js'
-// import { eventBusService } from '../......../services/event-bus-service.js'
-import { eventBusService } from '../../../services/event-bus-service.js'
+import { eventBusService } from '../../../../services/event-bus-service.js'
+
 const { withRouter } = ReactRouterDOM
 
 export class _NoteTitleEditable extends React.Component {
@@ -52,21 +52,23 @@ export class _NoteTitleEditable extends React.Component {
         const { isEditing, newTitle } = this.state
 
         return (
-            <section className="note-title">
+            <React.Fragment>
                 {!isEditing &&
-                    <React.Fragment>
+                    <section className="flex space-between align-center note-title">
                         <div>{title}</div>
-                        <button onClick={this.toggleEditing}>edit</button>
-                    </React.Fragment>}
+                        <button className="pointer fas note-edit-btn" onClick={this.toggleEditing}></button>
+                    </section>}
 
 
                 {isEditing &&
-                    <React.Fragment>
-                        <input type="text" placeholder={title} name="newTitle" value={newTitle} onChange={this.handleChange} />
-                        <button onClick={this.onChangeTitle}>V</button>
-                        <button onClick={this.onCancelChange}>X</button>
-                    </React.Fragment>}
-            </section>
+                    <section className="flex space-between align-center note-title">
+                        <input className="note-edit-title-input" type="text" placeholder={title} name="newTitle" value={newTitle} onChange={this.handleChange} />
+                        <div>
+                            <button className="pointer fas note-edit-confirm" onClick={this.onChangeTitle}></button>
+                            <button className="pointer fas note-edit-cancel" onClick={this.onCancelChange}></button>
+                        </div>
+                    </section>}
+            </React.Fragment>
         )
     }
 }

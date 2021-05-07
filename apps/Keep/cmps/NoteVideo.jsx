@@ -4,10 +4,6 @@ import { NoteTitleEditable } from './NoteTitleEditable.jsx'
 const { withRouter } = ReactRouterDOM
 
 export class _NoteVideo extends React.Component {
-    state = {
-
-    }
-
     get youtubeFixed() {
         let { videoUrl } = this.props.note.info
         let fixedUrl = videoUrl.split('?v=')
@@ -22,7 +18,7 @@ export class _NoteVideo extends React.Component {
             <article className="note-container">
                 <div className="note-preview-container" style={style}>
                     <NoteTitleEditable id={id} title={info.title} />
-                    <iframe width="420" height="315" frameBorder="0" src={this.youtubeFixed} ></iframe>
+                    <iframe src={this.youtubeFixed} frameBorder="0"></iframe>
                 </div>
 
                 <div className="note-editor-container">

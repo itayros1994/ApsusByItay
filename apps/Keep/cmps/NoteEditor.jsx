@@ -1,15 +1,9 @@
 import { noteService } from '../../services/notes-service.js'
-// import { eventBusService } from '../......../services/event-bus-service.js'
-import { eventBusService } from '../../../services/event-bus-service.js'
+import { eventBusService } from '../../../../services/event-bus-service.js'
 
 const { withRouter } = ReactRouterDOM
 
 export class _NoteEditor extends React.Component {
-    state = {
-
-    }
-
-
     getNoteSymbol() {
         const { type } = this.props.note
         switch (type) {

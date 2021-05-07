@@ -3,9 +3,8 @@
   background-color: #eee;
   border: 1px solid #222;
   border-radius: 5px;
-  max-width: 96vw;
   overflow: hidden;
-  margin-block-end: 1rem;
+  margin: 0 auto 1rem
 }
 
 .add-note-container input,
@@ -26,7 +25,7 @@
 .add-note-container input:first-child + input,
 .add-note-container input:first-child + textarea {
   border-block-start: 1px dotted #bbb;
-  height: 1.5rem;
+  height: 2rem;
   transition: border ease-in-out 0.5s;
 }
 
@@ -39,12 +38,11 @@
 .add-note-container textarea {
   font-family: arial;
   margin: 0;
-  overflow-y: auto;
   resize: none;
 }
 
 .add-note-container textarea:focus {
-  height: 5rem !important;
+  height: 7rem !important;
 }
 
 .add-note-actions-container {
@@ -95,23 +93,5 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 0.5rem;
-  }
-}
-
-@media screen and (min-width: 600px) {
-  .add-note-container {
-    max-width: 97vw;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  .add-note-container {
-    max-width: 98vw;
-  }
-}
-
-@media screen and (min-width: 1400px) {
-  .add-note-container {
-    max-width: 100%;
   }
 }
