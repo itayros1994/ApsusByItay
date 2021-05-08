@@ -4,8 +4,17 @@ export class EmailCompose extends React.Component {
 
     state = {
         sendBy: '',
-        tite: '',
-        body: ''
+        title: '',
+        body: '',
+    }
+
+    componentDidMount() {
+        const {subject, body } = this.props.match.params
+        console.log('stam');
+        if (body) {
+            this.setState({body,title:subject})
+            // this.setState({subject})
+        }
     }
 
     onAddMail(sendBy, title, body) {
@@ -16,7 +25,7 @@ export class EmailCompose extends React.Component {
     render() {
         const { sendBy, title, body } = this.state
         return <div>
-        
+
             <form className="add-email">
                 <div className="add-new-mail-title">New Mail</div>
                 <input className="input-detail" required type="text" value={sendBy} placeholder="your name" onChange={(ev) => this.setState({ sendBy: ev.target.value })} ></input>

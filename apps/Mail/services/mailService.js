@@ -3,13 +3,7 @@ import { storageService } from '/storage-service.js'
 const _LOCAL_STORAGE_KEY = 'mails'
 const time = new Date();
 
-let mails = [
-    // { id: utilService.makeId(), sendBy: 'Chup', subject: 'facebook on up', body: 'Oren Is King!!', isRead: false, sentAt: 1551133930594 },
-    // { id: utilService.makeId(), sendBy: 'Chup', subject: 'hey boy mate!', body: 'Itay is The Queen!', isRead: false, sentAt: 1551133930594 },
-    // { id: utilService.makeId(), sendBy: 'Itay', subject: 'wheater updating', body: 'Kaplan Is Bad Boy!', isRead: false, sentAt: 1551133930594 },
-    // { id: utilService.makeId(), sendBy: 'oren', subject: 'Send Me The Now!', body: 'CoperVaser is King', isRead: false, sentAt: 1551133930594 },
-    // { id: utilService.makeId(), sendBy: 'shiri', subject: 'Give Me More Money!', body: 'Basya is Love!!', isRead: false, sentAt: 1551133930594 }
-]
+let mails = []
 
 let mails2 = [
 

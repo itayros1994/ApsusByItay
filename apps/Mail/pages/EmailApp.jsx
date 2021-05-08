@@ -48,9 +48,7 @@ export class EmailApp extends React.Component {
                 <div className="actions-list-container">
                     <EmailFilter onSetFilter={this.onSetFilter} />
                     <Switch>
-                        {/* <Route component={EmailStars} path="/stars" /> */}
                         <Route component={EmailDetails} path="/mail/:emailId" />
-                        
                         <EmailList onDeleteMail={this.onDeleteMail} emails={this.state.emails}></EmailList>
                     </Switch>
 
