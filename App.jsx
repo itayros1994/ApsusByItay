@@ -6,10 +6,10 @@ import { AboutUs } from './pages/AboutUs.jsx'
 import { Home } from './pages/Home.jsx'
 import { Notes } from './apps/Keep/pages/NotesApp.jsx'
 import { AddNoteFromMail } from './apps/Keep/pages/AddNoteFromMail.jsx'
-// import { EmailDetails } from './apps/Mail/cmps/EmailDetails.jsx'
-// import {EmailApp} from './apps/Mail/Pages/EmailApp.jsx'
-// import {EmailCompose} from './apps/Mail/cmps/EmailCompose.jsx'
-// import {EmailStars} from './apps/Mail/cmps/EmailStars.jsx'
+import { EmailDetails } from './apps/Mail/cmps/EmailDetails.jsx'
+import {EmailApp} from './apps/Mail/Pages/EmailApp.jsx'
+import {EmailCompose} from './apps/Mail/cmps/EmailCompose.jsx'
+import {EmailStars} from './apps/Mail/cmps/EmailStars.jsx'
  
 
 export function App() {
@@ -22,9 +22,9 @@ export function App() {
                 <main>
                     <Switch>
                         {/* MAIL ROUTES */}
-                        {/* <Route component={EmailApp} path="/mail" />
+                        <Route component={EmailApp} path="/mail" />
                         <Route component={EmailStars} path="/stars" />
-                        <Route component={EmailCompose} path="/compose/:subject?/:body?" /> */}
+                        <Route component={EmailCompose} path="/compose/:subject?/:body?" />
 
                         {/* KEEP ROUTES */}
                         <Route component={AddNoteFromMail} path="/notes/add/:noteTitle/:noteContent" />

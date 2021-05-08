@@ -15,7 +15,8 @@ export const noteService = {
     toggleCheckTodo,
     changeBgcColor,
     getNoteTxtToCopy,
-    getNoteTitle
+    getNoteTitle,
+    getNoteTxtForMail
 }
 
 function query(filterTxt, ctg) {
@@ -261,10 +262,10 @@ function getNoteTitle(nId) {
     let subject;
     switch (_getNoteType(noteIdx)) {
         case 'NoteText':
-            subject = note.info.txt
+            subject = note.info.title
             break;
         case 'NoteTodos':
-            subject = note.info.todos.label
+            subject = note.info.label
             break;
         case 'NoteImg':
             subject = note.info.title
@@ -275,6 +276,28 @@ function getNoteTitle(nId) {
     }
 
     return subject
+}
+
+function getNoteTxtForMail(nId) {
+    const noteIdx = _getNoteIdxInNotes(nId)
+    const note = notes[noteIdx]
+    let copyTxt = ''
+    switch (_getNoteType(noteIdx)) {
+        case 'NoteText':
+            copyTxt = note.info.txt
+            break;
+        case 'NoteTodos':
+            note.info.todos.forEach(todo => copyTxt += `${todo.txt} \n`)
+            break;
+        case 'NoteImg':
+            copyTxt = note.info.url
+            break;
+        case 'NoteVideo':
+            copyTxt = note.info.videoUrl
+            break;
+    }
+
+    return copyTxt + '\n\Sent from Appsus notes'
 }
 
 function _saveNotesToStorage() {
@@ -301,8 +324,21 @@ function _createNotesLst() {
             type: "NoteText",
             isPinned: true,
             info: {
-                title: "Don't forget",
-                txt: "Fullstack Me Baby!"
+                title: "Finalize miss note",
+                txt: "Finally miss note is up! work has done and everything is set up for delivery"
+            },
+            style: {
+                backgroundColor: utilService.getRandomColor()
+            }
+        },
+
+        {
+            id: utilService.makeId(),
+            type: "NoteImg",
+            isPinned: true,
+            info: {
+                title: "My mentor!",
+                url: "https://ca.slack-edge.com/T01JRLNVCEA-U01PVGYMT0U-59a698606caa-512"
             },
             style: {
                 backgroundColor: utilService.getRandomColor()
@@ -314,10 +350,11 @@ function _createNotesLst() {
             type: "NoteTodos",
             isPinned: true,
             info: {
-                label: "How was it:",
+                label: "Don't forget",
                 todos: [
-                    { id: utilService.makeId(), txt: "Do that", doneAt: null },
-                    { id: utilService.makeId(), txt: "Do this", doneAt: 1620162197422 }
+                    { id: utilService.makeId(), txt: "Eat lunch", doneAt: 1620162197422 },
+                    { id: utilService.makeId(), txt: "Take a shower", doneAt: null },
+                    { id: utilService.makeId(), txt: "Take a nap", doneAt: null }
                 ]
             },
             style: {
@@ -327,37 +364,37 @@ function _createNotesLst() {
 
         {
             id: utilService.makeId(),
-            type: "NoteImg",
-            isPinned: false,
+            type: "NoteVideo",
+            isPinned: true,
             info: {
-                url: "https://ca.slack-edge.com/T01JRLNVCEA-U01PTQMHFD4-db4ae79d22a4-512",
-                title: "Itay Rosental"
+                title: "Dreams",
+                videoUrl: "https://www.youtube.com/watch?v=QrsFsO5thEM"
             },
             style: {
                 backgroundColor: utilService.getRandomColor()
             }
         },
-
-        // {
-        //     id: utilService.makeId(),
-        //     type: "NoteVideo",
-        //     isPinned: false,
-        //     info: {
-        //         title: "note title",
-        //         videoUrl: "https://www.youtube.com/watch?v=vafFqQvSe3U"
-        //     },
-        //     style: {
-        //         backgroundColor: utilService.getRandomColor()
-        //     }
-        // },
 
         {
             id: utilService.makeId(),
             type: "NoteText",
             isPinned: true,
             info: {
-                title: "Don't forget",
-                txt: "Fullstack Me Baby!"
+                title: "Credit card number",
+                txt: "4580-7943-1179-4512"
+            },
+            style: {
+                backgroundColor: utilService.getRandomColor()
+            }
+        },
+
+        {
+            id: utilService.makeId(),
+            type: "NoteImg",
+            isPinned: true,
+            info: {
+                title: "Guy Kaplan!",
+                url: "https://ca.slack-edge.com/T01JRLNVCEA-U01NDM3SG6T-7257e94591c6-512"
             },
             style: {
                 backgroundColor: utilService.getRandomColor()
@@ -369,10 +406,48 @@ function _createNotesLst() {
             type: "NoteTodos",
             isPinned: true,
             info: {
-                label: "How was it:",
+                label: "bechamel Ingredients",
                 todos: [
-                    { id: utilService.makeId(), txt: "Do that", doneAt: null },
-                    { id: utilService.makeId(), txt: "Do this", doneAt: 1620162197422 }
+                    { id: utilService.makeId(), txt: "2 tablespoons butter", doneAt: null },
+                    { id: utilService.makeId(), txt: "2 tablespoons flour", doneAt: null },
+                    { id: utilService.makeId(), txt: "1 1/4 cups milk, heated Salt", doneAt: null },
+                    { id: utilService.makeId(), txt: "Freshly ground pepper", doneAt: null }
+                ]
+            },
+            style: {
+                backgroundColor: utilService.getRandomColor()
+            }
+        },
+
+        {
+            id: utilService.makeId(),
+            type: "NoteVideo",
+            isPinned: true,
+            info: {
+                title: "Listen to that",
+                videoUrl: "https://www.youtube.com/watch?v=jI4lSkoSEXQ"
+            },
+            style: {
+                backgroundColor: utilService.getRandomColor()
+            }
+        },
+
+        {
+            id: utilService.makeId(),
+            type: "NoteTodos",
+            isPinned: true,
+            info: {
+                label: "Bolognese recipe",
+                todos: [
+                    { id: utilService.makeId(), txt: "2 x 400g tins plum tomatoes", doneAt: null },
+                    { id: utilService.makeId(), txt: "small pack basil leaves picked, ¾ finely chopped and the rest left whole for garnish", doneAt: null },
+                    { id: utilService.makeId(), txt: "1 tsp dried oregano", doneAt: null },
+                    { id: utilService.makeId(), txt: "2 fresh bay leaves", doneAt: null },
+                    { id: utilService.makeId(), txt: "2 tbsp tomato purée", doneAt: null },
+                    { id: utilService.makeId(), txt: "1 beef stock cube", doneAt: null },
+                    { id: utilService.makeId(), txt: "1 red chilli deseeded and finely chopped (optional)", doneAt: null },
+                    { id: utilService.makeId(), txt: "125ml red wine", doneAt: null },
+                    { id: utilService.makeId(), txt: "6 cherry tomatoes sliced in half", doneAt: null }
                 ]
             },
             style: {
@@ -383,36 +458,36 @@ function _createNotesLst() {
         {
             id: utilService.makeId(),
             type: "NoteImg",
-            isPinned: false,
+            isPinned: true,
             info: {
-                url: "https://ca.slack-edge.com/T01JRLNVCEA-U01PTQMHFD4-db4ae79d22a4-512",
-                title: "Itay Rosental"
+                title: "The king!",
+                url: "https://ca.slack-edge.com/T01JRLNVCEA-U01PTQMHFD4-db4ae79d22a4-512"
             },
             style: {
                 backgroundColor: utilService.getRandomColor()
             }
         },
 
-        // {
-        //     id: utilService.makeId(),
-        //     type: "NoteVideo",
-        //     isPinned: false,
-        //     info: {
-        //         title: "note title",
-        //         videoUrl: "https://www.youtube.com/watch?v=vafFqQvSe3U"
-        //     },
-        //     style: {
-        //         backgroundColor: utilService.getRandomColor()
-        //     }
-        // },
+        {
+            id: utilService.makeId(),
+            type: "NoteVideo",
+            isPinned: true,
+            info: {
+                title: "Today's evening",
+                videoUrl: "https://www.youtube.com/watch?v=caqm1Ihq9LM"
+            },
+            style: {
+                backgroundColor: utilService.getRandomColor()
+            }
+        },
 
         {
             id: utilService.makeId(),
             type: "NoteText",
             isPinned: true,
             info: {
-                title: "Don't forget",
-                txt: "Fullstack Me Baby!"
+                title: "Bank password (secret)",
+                txt: utilService.makeId()
             },
             style: {
                 backgroundColor: utilService.getRandomColor()
@@ -421,14 +496,25 @@ function _createNotesLst() {
 
         {
             id: utilService.makeId(),
-            type: "NoteTodos",
+            type: "NoteImg",
             isPinned: true,
             info: {
-                label: "How was it:",
-                todos: [
-                    { id: utilService.makeId(), txt: "Do that", doneAt: null },
-                    { id: utilService.makeId(), txt: "Do this", doneAt: 1620162197422 }
-                ]
+                title: "Sunset",
+                url: "https://live-production.wcms.abc-cdn.net.au/b0d688db39ca3c8d460bbe750704565a?impolicy=wcms_crop_resize&cropH=576&cropW=1023&xPos=0&yPos=0&width=862&height=485"
+            },
+            style: {
+                backgroundColor: utilService.getRandomColor()
+            }
+        },
+
+
+        {
+            id: utilService.makeId(),
+            type: "NoteText",
+            isPinned: false,
+            info: {
+                title: "A note",
+                txt: "A note for remember and never forget: Hopladi Hoplada La la li La la la"
             },
             style: {
                 backgroundColor: utilService.getRandomColor()
@@ -440,27 +526,188 @@ function _createNotesLst() {
             type: "NoteImg",
             isPinned: false,
             info: {
-                url: "https://ca.slack-edge.com/T01JRLNVCEA-U01PTQMHFD4-db4ae79d22a4-512",
-                title: "Itay Rosental"
+                title: "Roommate",
+                url: "https://ca.slack-edge.com/T01JRLNVCEA-U01NUEECE10-785db1d51862-512"
+            },
+            style: {
+                backgroundColor: utilService.getRandomColor()
+            }
+        },
+
+        
+        {
+            id: utilService.makeId(),
+            type: "NoteVideo",
+            isPinned: false,
+            info: {
+                title: "COOL!",
+                videoUrl: "https://www.youtube.com/watch?v=1W3bcfJG5dk"
+            },
+            style: {
+                backgroundColor: utilService.getRandomColor()
+            }
+        },
+
+        {
+            id: utilService.makeId(),
+            type: "NoteTodos",
+            isPinned: false,
+            info: {
+                label: "Just checking checks",
+                todos: [
+                    { id: utilService.makeId(), txt: "Done", doneAt: 1620162197422 },
+                    { id: utilService.makeId(), txt: "Done", doneAt: 1620162197422 },
+                    { id: utilService.makeId(), txt: "Done", doneAt: 1620162197422 },
+                    { id: utilService.makeId(), txt: "Done", doneAt: 1620162197422 },
+                    { id: utilService.makeId(), txt: "Done", doneAt: 1620162197422 }
+                ]
+            },
+            style: {
+                backgroundColor: utilService.getRandomColor()
+            }
+        },
+
+        {
+            id: utilService.makeId(),
+            type: "NoteText",
+            isPinned: false,
+            info: {
+                title: "Look at me",
+                txt: "I'm a note!"
+            },
+            style: {
+                backgroundColor: utilService.getRandomColor()
+            }
+        },
+
+        {
+            id: utilService.makeId(),
+            type: "NoteVideo",
+            isPinned: false,
+            info: {
+                title: "DO NOT listen!",
+                videoUrl: "https://www.youtube.com/watch?v=szYVZgd6Ly0"
+            },
+            style: {
+                backgroundColor: utilService.getRandomColor()
+            }
+        },
+
+        {
+            id: utilService.makeId(),
+            type: "NoteTodos",
+            isPinned: false,
+            info: {
+                label: "Taste foods",
+                todos: [
+                    { id: utilService.makeId(), txt: "Pasta", doneAt: 1620162197422 },
+                    { id: utilService.makeId(), txt: "Hamburger", doneAt: 1620162197422 },
+                    { id: utilService.makeId(), txt: "Pizza", doneAt: 1620162197422 },
+                    { id: utilService.makeId(), txt: "Salami", doneAt: 1620162197422 },
+                    { id: utilService.makeId(), txt: "Chicken", doneAt: 1620162197422 }
+                ]
+            },
+            style: {
+                backgroundColor: utilService.getRandomColor()
+            }
+        },
+
+        {
+            id: utilService.makeId(),
+            type: "NoteText",
+            isPinned: false,
+            info: {
+                title: "WOW!",
+                txt: "Time passed by! it's already 2021. Did you know that? really? So late..."
+            },
+            style: {
+                backgroundColor: utilService.getRandomColor()
+            }
+        },
+
+        {
+            id: utilService.makeId(),
+            type: "NoteImg",
+            isPinned: false,
+            info: {
+                title: "Sunrise",
+                url: "https://www.surfertoday.com/images/stories/sunrisesunsettime.jpg"
+            },
+            style: {
+                backgroundColor: utilService.getRandomColor()
+            }
+        },
+
+        {
+            id: utilService.makeId(),
+            type: "NoteText",
+            isPinned: false,
+            info: {
+                title: "Don't forget Jerusalem",
+                txt: "If I Forget You Jerusalem\nIf I do not raise you\nAnd if I do not raise you\nJerusalem\nAbove all my joy\nAbove all, above my highest joy"
+            },
+            style: {
+                backgroundColor: utilService.getRandomColor()
+            }
+        },
+
+        {
+            id: utilService.makeId(),
+            type: "NoteVideo",
+            isPinned: false,
+            info: {
+                title: "Classical",
+                videoUrl: "https://www.youtube.com/watch?v=JrlZvIaVPBk"
+            },
+            style: {
+                backgroundColor: utilService.getRandomColor()
+            }
+        },
+
+        {
+            id: utilService.makeId(),
+            type: "NoteImg",
+            isPinned: false,
+            info: {
+                title: "Appsus",
+                url: "https://media.gq.com/photos/56e71bd3161e63486d04ce3d/master/w_1600%2Cc_limit/horseinsuit.jpg"
+            },
+            style: {
+                backgroundColor: utilService.getRandomColor()
+            }
+        },
+
+        {
+            id: utilService.makeId(),
+            type: "NoteTodos",
+            isPinned: false,
+            info: {
+                label: "Vegs to buy",
+                todos: [
+                    { id: utilService.makeId(), txt: "Potato", doneAt: null },
+                    { id: utilService.makeId(), txt: "Sweet potato", doneAt: null },
+                    { id: utilService.makeId(), txt: "Tomato", doneAt: null },
+                    { id: utilService.makeId(), txt: "Onion", doneAt: null },
+                    { id: utilService.makeId(), txt: "Cucumber", doneAt: null }
+                ]
+            },
+            style: {
+                backgroundColor: utilService.getRandomColor()
+            }
+        },
+
+        {
+            id: utilService.makeId(),
+            type: "NoteVideo",
+            isPinned: false,
+            info: {
+                title: "How do I feel",
+                videoUrl: "https://www.youtube.com/watch?v=vafFqQvSe3U"
             },
             style: {
                 backgroundColor: utilService.getRandomColor()
             }
         }
-        // ,
-
-        // {
-        //     id: utilService.makeId(),
-        //     type: "NoteVideo",
-        //     isPinned: false,
-        //     info: {
-        //         title: "note title",
-        //         videoUrl: "https://www.youtube.com/watch?v=vafFqQvSe3U"
-        //     },
-        //     style: {
-        //         backgroundColor: utilService.getRandomColor()
-        //     }
-        // }
     ]
 
     _saveNotesToStorage()
