@@ -1,0 +1,39 @@
+.note-from-mail-container {
+  border: 1px solid #222;
+  border-radius: 5px;
+  margin: 0 auto;
+  overflow: hide;
+  max-width: 850px;
+}
+
+.note-from-mail-question {
+  background-color: #8c2c98;
+  color: #eee;
+  font-size: 1.2rem;
+  font-family: Lato-Black;
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+}
+
+.note-from-mail-title {
+  font-size: 1.1rem;
+  padding: 0.5rem;
+}
+
+.note-from-mail-content {
+  padding: 0.5rem;
+}
+
+.note-from-mail-title span,
+.note-from-mail-content span {
+  font-weight: 600;
+}
+
+.note-from-mail-btns-container button {
+  background-color: #eee;
+  color: #8c2c98;
+  border: 1px solid #9c2c98;
+  border-radius: 5px;
+  padding: 0.5rem 3rem;
+  margin: 1rem 1rem 0.5rem;
+}

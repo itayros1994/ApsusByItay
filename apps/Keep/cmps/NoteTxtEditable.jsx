@@ -49,7 +49,7 @@ export class _NoteTxtEditable extends React.Component {
             <section className="note-text-content-container">
                 {!isEditing &&
                     <React.Fragment>
-                        <button className="pointer float-right fas note-edit-btn" onClick={this.toggleEdit}></button>
+                        <button className="pointer float-right fas note-edit-btn note-edit-content-btn" onClick={this.toggleEdit}></button>
                         <div className="fl-uppercase">{this.props.txt}</div>
                     </React.Fragment>
                 }

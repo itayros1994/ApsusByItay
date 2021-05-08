@@ -1,11 +1,14 @@
 /* NOTE CARD */
 .note-container {
-  border: 1px solid #111;
-  border-radius: 5px;
   break-inside: avoid-column;
-  margin: 0 auto 1.5rem;
+  border-radius: 5px;
+  margin-block-end: 1.5rem;
   overflow: hidden;
   width: 250px;
+}
+
+.note-container:hover{
+  box-shadow: 1px 1px 5px 1px #8c8c8c;
 }
 
 .note-preview-container {
@@ -16,6 +19,7 @@
 .note-title {
   font-family: Lato-Black;
   padding: 0.3rem;
+  line-height: 2rem;
   text-transform: capitalize;
   word-break: break-all;
 }
@@ -24,12 +28,22 @@
   font-size: 1.2rem;
 }
 
+.note-title:hover .note-edit-title-btn{
+  display: inline-block;
+}
+
+.note-edit-title-btn,
+.note-edit-content-btn{
+  display: none;
+}
+
 .note-edit-title-input {
   background-color: transparent;
   border: 0;
   font-size: 1.1rem;
   font-family: Lato-Black;
   outline: none;
+  width: 9rem;
 }
 
 .note-img {
@@ -58,14 +72,14 @@
 .note-edit-btn,
 .note-edit-confirm,
 .note-edit-cancel {
-  color: white;
+  color: #222;
 }
 
 .note-edit-btn:hover,
 .note-edit-confirm:hover,
 .note-edit-cancel:hover {
-  background-color: black;
-  color: white;
+  background-color: #222;
+  color: #eee;
 }
 
 .note-edit-btn::before {
@@ -86,6 +100,10 @@
   min-height: 3rem;
 }
 
+.note-text-content-container:hover .note-edit-content-btn{
+  display: inline-block;
+}
+
 .note-text-edit-textarea {
   background-color: transparent;
   border: 0;
@@ -94,35 +112,4 @@
   overflow-y: auto;
   height: 5rem;
   width: 100%;
-}
-
-/* MEDIA QUERIES */
-@media screen and (min-width: 350px) {
-  .note-container {
-    width: 320px;
-  }
-}
-
-@media screen and (min-width: 550px) {
-  .note-container {
-    width: 250px;
-  }
-}
-
-@media screen and (min-width: 690px) {
-  .note-container {
-    width: 320px;
-  }
-}
-
-@media screen and (min-width: 820px) {
-  .note-container {
-    width: 250px;
-  }
-}
-
-@media screen and (min-width: 1050px) {
-  .note-container {
-    width: 100%;
-  }
 }

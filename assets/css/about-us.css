@@ -1,0 +1,114 @@
+.about-us-intro-container {
+  border-radius: 5px;
+  padding-block-end: 1rem;
+}
+
+.about-us-section-title {
+  color: #222;
+  letter-spacing: 5px;
+  font-family: Kanit-Bold;
+  font-size: 2rem;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.about-us-sub-title {
+  color: #222;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin-block-end: 1rem;
+}
+
+.about-us-lorem {
+  color: #222;
+  margin: 0 auto 2rem;
+  max-width: 600px;
+  text-align: justify;
+}
+
+.team-member-container {
+  color: #222;
+  margin: 0 auto;
+  max-width: 250px;
+}
+
+.team-member-container:not(:first-of-type) {
+  margin-block-start: 2rem;
+}
+
+.team-member-container:last-of-type {
+  margin-block-end: 2rem;
+}
+
+.team-member-container img {
+  border-radius: 50%;
+  height: 150px;
+  width: auto;
+}
+
+.team-member-name {
+  color: 222;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.team-member-role {
+  font-weight: 600;
+}
+
+.team-member-desc {
+  text-align: justify;
+  margin-block-end: 1rem;
+}
+
+.show-more-toggler-btn {
+  font-size: 0.9rem;
+  margin: 0.5rem auto;
+  width: max-content;
+}
+
+.team-member-contact {
+  text-align: left;
+}
+
+.team-member-contact div {
+  cursor: pointer;
+  transition: color ease-in-out 0.2s;
+}
+
+.team-member-contact div:hover {
+  color: #8c2c98;
+}
+
+.team-member-mail::before {
+  content: "\f658";
+  margin-inline-end: 0.5rem;
+}
+
+.team-member-phone::before {
+  content: "\f879";
+  margin-inline-end: 0.5rem;
+}
+
+@media screen and (min-width: 700px) {
+  .about-us-team-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-block-start: 1rem;
+  }
+
+  .team-member-container:not(:first-of-type) {
+    margin-block-start: 0;
+  }
+
+  .team-member-container:last-of-type {
+    margin-block-start: 2rem;
+  }
+}
+
+@media screen and (min-width: 820px) {
+    .team-member-container:last-of-type {
+        margin-block-start: 0;
+      }
+}

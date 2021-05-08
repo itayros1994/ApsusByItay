@@ -26,7 +26,6 @@ export function App() {
                         <Route component={EmailStars} path="/stars" />
                         <Route component={EmailCompose} path="/compose" />
 
-                        
                         {/* KEEP ROUTES */}
                         <Route component={AddNoteFromMail} path="/notes/add/:noteTitle/:noteContent" />
                         <Route component={Notes} path="/notes" />

@@ -7,10 +7,13 @@
 @import './font-awsome.css';
 @import './cmps/navbar.css';
 @import './cmps/footer.css';
-@import './cmps/Notifications.css';
+@import './cmps/notifications.css';
 
 /* Keep css by Oren */
 @import '../../apps/Keep/assets/css/keep.css';
 
 /* Mails Css By Itay */
 @import '../../apps/Mail/assets/css/mailMain.css';
+
+/* About us */
+@import './about-us.css';

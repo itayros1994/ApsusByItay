@@ -26,7 +26,7 @@ export class NoteFilter extends React.Component {
         const { filter } = this.state
 
         return (
-            <section className="notes-search-container text-center">
+            <section className="text-center notes-search-container">
                 <label htmlFor="notes-search-input" className="fas"></label>
                 <span>
                     <input type="text" id="notes-search-input" placeholder="Search notes" name="filter" value={filter} onChange={this.handleChange} />

@@ -20,13 +20,15 @@ export class AddNoteFromMail extends React.Component {
         const { noteTitle, noteContent } = this.props.match.params
 
         return (
-            <div>
-                Do you whant to add the following note?<br />
-                title: {noteTitle}<br />
-                note: {noteContent}<br />
-                <button onClick={this.onAddNote}>ADD</button>
-                <button onClick={this.onCancelAdd}>NO</button>
-            </div>
+            <section className="note-from-mail-container">
+                <div className="note-from-mail-question">Do you want to add the following note?</div>
+                <div className="note-from-mail-title"><span>Title</span>: {noteTitle}</div>
+                <div className="note-from-mail-content"><span>Note</span>: {noteContent}</div>
+                <div className="text-center note-from-mail-btns-container">
+                    <button className="pointer" onClick={this.onAddNote}>ADD</button>
+                    <button className="pointer" onClick={this.onCancelAdd}>NO</button>
+                </div>
+            </section>
         )
     }
 }

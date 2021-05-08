@@ -10,7 +10,7 @@
 .note-todo-uncheck-btn,
 .note-edit-todo-delete,
 .note-todo-add-btn {
-  color: white;
+  color: #222;
   background-color: transparent;
   border: 0;
   border-radius: 50%;
@@ -22,7 +22,8 @@
 .note-todo-uncheck-btn:hover,
 .note-edit-todo-delete:hover,
 .note-todo-add-btn:hover {
-  background-color: black;
+  color:#eee;
+  background-color: #222;
 }
 
 .note-todo-check-btn,
@@ -67,6 +68,17 @@
   background-color: transparent;
   border: 0;
   outline: none;
+  width: 8rem;
+}
+
+.note-todo-container:hover .note-edit-todo-delete,
+.note-todo-container:hover .note-edit-btn{
+  display: inline-block;
+}
+
+.note-edit-todo-delete,
+.note-edit-btn{
+  display: none;
 }
 
 .note-todo-add-btn{
