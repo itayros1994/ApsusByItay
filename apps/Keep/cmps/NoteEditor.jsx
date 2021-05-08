@@ -45,8 +45,8 @@ export class _NoteEditor extends React.Component {
 
     onSendAsMail = (nId) => {
         const subject = noteService.getNoteTitle(nId)
-
-        console.log(subject)
+        const body = noteService.getNoteTxtForMail(nId)
+        this.props.history.push(`/compose/${subject}/${body}`)
     }
 
     onDeleteNote = (nId) => {
