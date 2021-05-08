@@ -1,6 +1,6 @@
 /* FILTER NOTES */
 
-.notes-filter-container{
+.notes-filter-container {
   height: 2rem;
   justify-content: center;
   align-items: flex-end;
@@ -8,7 +8,7 @@
 
 label[for="notes-search-input"]::before {
   content: "\f00e";
-  color: #8c2c98;
+  color: var(--purple);
   padding: 0 0.2rem 2px 0;
 }
 
@@ -23,7 +23,7 @@ label[for="notes-search-input"]:hover {
 .notes-filter-container input {
   background-color: transparent;
   border: 0;
-  border-block-end: 2px solid #222;
+  border-block-end: 2px solid var(--black);
   padding: 0 0.2rem;
   width: 10rem;
   outline: none;
@@ -31,7 +31,7 @@ label[for="notes-search-input"]:hover {
 }
 
 .notes-filter-container input:focus {
-  border-block-end: 2px solid #8c2c98;
+  border-block-end: 2px solid var(--purple);
   width: 15rem;
 }
 
@@ -54,13 +54,13 @@ label[for="notes-search-input"]:hover {
 .notes-ctg-filter-select {
   background-color: transparent;
   border: 0;
-  border-block-end: 2px solid #222;
+  border-block-end: 2px solid var(--black);
   appearance: none;
   outline: none;
   width: 5rem;
   transition: all ease-in-out 0.5s;
 }
 
-.notes-ctg-filter-select:focus{
-  border-block-end: 2px solid #8c2c98;
+.notes-ctg-filter-select:focus {
+  border-block-end: 2px solid var(--purple);
 }

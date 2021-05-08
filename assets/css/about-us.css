@@ -4,7 +4,6 @@
 }
 
 .about-us-section-title {
-  color: #222;
   letter-spacing: 5px;
   font-family: Kanit-Bold;
   font-size: 2rem;
@@ -13,21 +12,18 @@
 }
 
 .about-us-sub-title {
-  color: #222;
   font-size: 1.1rem;
   letter-spacing: 1px;
   margin-block-end: 1rem;
 }
 
 .about-us-lorem {
-  color: #222;
   margin: 0 auto 2rem;
   max-width: 600px;
   text-align: justify;
 }
 
 .team-member-container {
-  color: #222;
   margin: 0 auto;
   max-width: 250px;
 }
@@ -77,7 +73,7 @@
 }
 
 .team-member-contact div:hover {
-  color: #8c2c98;
+  color: var(--purple);
 }
 
 .team-member-mail::before {

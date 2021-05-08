@@ -6,7 +6,8 @@
 
 body {
     margin: 0;
-    background-color: #dfdfdf;
+    background-color: var(--white);
+    color: var(--black)
 }
 
 .page-layout-container {

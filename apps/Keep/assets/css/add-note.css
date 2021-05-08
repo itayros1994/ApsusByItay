@@ -1,10 +1,10 @@
 /* ADDING NOTE */
 .add-note-container {
-  background-color: #eee;
-  border: 1px solid #222;
+  background-color: var(--white);
+  border: 1px solid var(--black);
   border-radius: 5px;
   overflow: hidden;
-  margin: 0 auto 1rem
+  margin: 0 auto 1rem;
 }
 
 .add-note-container input,
@@ -32,7 +32,7 @@
 .add-note-container input:first-child:focus + input,
 .add-note-container input:first-child + input:focus,
 .add-note-container input:first-child + textarea:focus {
-  border-block-start: 1px solid #8c2c98;
+  border-block-start: 1px solid var(--purple);
 }
 
 .add-note-container textarea {
@@ -60,8 +60,8 @@
 .notes-type-btn {
   cursor: pointer;
   font-style: normal;
-  background-color: #eee;
-  border: 1px solid #222;
+  background-color: var(--white);
+  border: 1px solid var(--black);
   border-radius: 5px;
   padding: 0.5rem 0.7rem;
   transition: background-color, color ease-in-out 0.5s;
@@ -72,14 +72,14 @@
 }
 
 .notes-type-btn-active {
-  background-color: #8c2c98 !important;
-  color: #eee;
+  background-color: var(--purple) !important;
+  color: var(--white);
 }
 
 .add-note-actions-container input {
-  background-color: #8c2c98;
-  color: #eee;
-  border: 1px solid #222;
+  background-color: var(--purple);
+  color: var(--white);
+  border: 1px solid var(--black);
   border-radius: 5px;
   font-weight: 600;
   padding: 0.5rem;

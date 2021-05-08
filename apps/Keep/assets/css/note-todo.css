@@ -10,7 +10,6 @@
 .note-todo-uncheck-btn,
 .note-edit-todo-delete,
 .note-todo-add-btn {
-  color: #222;
   background-color: transparent;
   border: 0;
   border-radius: 50%;
@@ -22,15 +21,14 @@
 .note-todo-uncheck-btn:hover,
 .note-edit-todo-delete:hover,
 .note-todo-add-btn:hover {
-  color:#eee;
-  background-color: #222;
+  color: var(--white);
+  background-color: var(--black);
 }
 
 .note-todo-check-btn,
-.note-todo-uncheck-btn{
+.note-todo-uncheck-btn {
   margin-inline-end: 0.5rem;
 }
-
 
 .note-todo-check-btn::before {
   content: "\f46c";
@@ -41,11 +39,11 @@
 }
 
 .note-todo-check-btn:hover {
-  color: red;
+  color: var(--red);
 }
 
 .note-todo-uncheck-btn:hover {
-  color: green;
+  color: var(--green);
 }
 
 .note-todo-text-done {
@@ -72,16 +70,16 @@
 }
 
 .note-todo-container:hover .note-edit-todo-delete,
-.note-todo-container:hover .note-edit-btn{
+.note-todo-container:hover .note-edit-btn {
   display: inline-block;
 }
 
 .note-edit-todo-delete,
-.note-edit-btn{
+.note-edit-btn {
   display: none;
 }
 
-.note-todo-add-btn{
+.note-todo-add-btn {
   margin: 0 0 0.5rem 0.5rem;
 }
 

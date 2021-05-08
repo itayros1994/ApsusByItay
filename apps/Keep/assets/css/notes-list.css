@@ -15,11 +15,11 @@
 }
 
 .note-pinned-title::before {
-  color: #8c2c98;
+  color: var(--purple);
 }
 
-.notes-container {
-  column-fill: balance;
+.notes-container{
+  margin-block-end: 2rem;
 }
 
 /* MEDIA QUERIES */

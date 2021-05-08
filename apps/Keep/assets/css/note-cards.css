@@ -1,6 +1,7 @@
 /* NOTE CARD */
 .note-container {
   break-inside: avoid-column;
+  border: 1px solid transparent;
   border-radius: 5px;
   margin-block-end: 1.5rem;
   overflow: hidden;
@@ -8,7 +9,7 @@
 }
 
 .note-container:hover{
-  box-shadow: 1px 1px 5px 1px #8c8c8c;
+  border: 1px solid #aaa;
 }
 
 .note-preview-container {
@@ -28,12 +29,12 @@
   font-size: 1.2rem;
 }
 
-.note-title:hover .note-edit-title-btn{
+.note-title:hover .note-edit-title-btn {
   display: inline-block;
 }
 
 .note-edit-title-btn,
-.note-edit-content-btn{
+.note-edit-content-btn {
   display: none;
 }
 
@@ -69,17 +70,11 @@
   transition: background-color ease-in-out 0.5s, color ease-in-out 0.5s;
 }
 
-.note-edit-btn,
-.note-edit-confirm,
-.note-edit-cancel {
-  color: #222;
-}
-
 .note-edit-btn:hover,
 .note-edit-confirm:hover,
 .note-edit-cancel:hover {
-  background-color: #222;
-  color: #eee;
+  background-color: var(--black);
+  color: var(--white);
 }
 
 .note-edit-btn::before {
@@ -100,7 +95,7 @@
   min-height: 3rem;
 }
 
-.note-text-content-container:hover .note-edit-content-btn{
+.note-text-content-container:hover .note-edit-content-btn {
   display: inline-block;
 }
 

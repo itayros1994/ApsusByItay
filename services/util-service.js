@@ -30,7 +30,7 @@ function makeLorem(size = 100) {
 }
 
 function getRandomColor() {
-    const possible = ['transparent', '#fff475', '#fbbc04', '#f28b82', '#aecbfa', '#cbf0f8', '#a7ffeb', '#e8eaed', '#e6c9a8', '#fdcfe8', '#d7aefb']
+    const possible = ['#fff475', '#fbbc04', '#f28b82', '#aecbfa', '#cbf0f8', '#a7ffeb', '#e8eaed', '#e6c9a8', '#fdcfe8', '#d7aefb']
 
     return possible[getRandomInt(0, possible.length)];
 }

@@ -1,13 +1,13 @@
 .note-editor-container {
-  background-color: #222;
+  background-color: var(--black);
   padding: 0.5rem;
-  color: #eee;
+  color: var(--white);
 }
 
 .note-editor-type-symbol {
   padding-inline-end: 0.5rem;
   margin-inline-end: 0.5rem;
-  border-inline-end: 2px dashed #eee;
+  border-inline-end: 2px dashed var(--white);
 }
 
 /* Symbols */

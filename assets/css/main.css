@@ -1,6 +1,7 @@
 /* MAIN - only imports */
 
  /* import all-around-app styles */
+@import './colors.css';
 @import './typography.css';
 @import './base.css';
 @import './helpers.css';
