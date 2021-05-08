@@ -16,5 +16,8 @@
 /* Mails Css By Itay */
 @import '../../apps/Mail/assets/css/mailMain.css';
 
+/* home page */
+@import './cmps/home.css';
+
 /* About us */
-@import './about-us.css';
+@import './cmps/about-us.css';

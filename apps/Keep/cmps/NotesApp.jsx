@@ -52,7 +52,7 @@ export class NoteApp extends React.Component {
         if (!notes) return <div>Loading...</div>
 
         return (
-            <section>
+            <section className="container">
                 <AddNote />
                 <div className="notes-filter-container flex ">
                     <NoteFilter onSetFilter={this.onSetFilter} />
@@ -79,7 +79,7 @@ export class NoteApp extends React.Component {
                             })}
                         </div>
                     </React.Fragment>}
-            </section >
+            </section>
         )
     }
 }

@@ -20,7 +20,7 @@ export class AddNoteFromMail extends React.Component {
         const { noteTitle, noteContent } = this.props.match.params
 
         return (
-            <section className="note-from-mail-container">
+            <section className="container note-from-mail-container">
                 <div className="note-from-mail-question">Do you want to add the following note?</div>
                 <div className="note-from-mail-title"><span>Title</span>: {noteTitle}</div>
                 <div className="note-from-mail-content"><span>Note</span>: {noteContent}</div>
