@@ -14,7 +14,8 @@ export class EmailApp extends React.Component {
 
     state = {
         emails: [],
-        filterBy: null
+        filterBy: null,
+        isHamburgerOpen : false
     }
     removeEvent;
 
@@ -36,7 +37,6 @@ export class EmailApp extends React.Component {
     }
 
     onSetFilter = (filterBy) => {
-        console.log(filterBy)
         this.setState({ filterBy }, this.loadMails)
     }
 
@@ -47,14 +47,20 @@ export class EmailApp extends React.Component {
             })
     }
 
+    onHamburgerClick = () => {
+        this.setState({isHamburgerOpen : !this.state.isHamburgerOpen})
+    }
+
     render() {
         return (
             <div className="email-main-container">
-                <SideBar emails={this.state.emails}></SideBar>
+                <SideBar isHamburgerOpen={this.state.isHamburgerOpen} emails={this.state.emails}></SideBar>
                 <div className="actions-list-container">
+                    <div className={`hamburger ${this.state.isHamburgerOpen ? 'hamburger-open' : 'hamburger-close' }`} onClick={this.onHamburgerClick}>☰</div>
                     <EmailFilter onSetFilter={this.onSetFilter} />
                     <Switch>
                         <Route component={EmailDetails} path="/mail/:emailId" />
+                        {/* <Route component={EmailStars} path="/mail/stars" /> */}
                         <EmailList onDeleteMail={this.onDeleteMail} emails={this.state.emails}></EmailList>
                     </Switch>
 

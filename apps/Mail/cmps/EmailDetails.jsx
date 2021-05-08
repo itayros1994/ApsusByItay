@@ -14,7 +14,6 @@ export class EmailDetails extends React.Component {
     mailService.deleteEmail(this.state.currEmailId)
       .then(() => {
         this.props.history.push('/mail')
-        console.log(this.props.history)
       })
   }
 
@@ -28,7 +27,6 @@ export class EmailDetails extends React.Component {
 
   render() {
     const currEmail = mailService.getMailById(this.props.match.params.emailId)
-    console.log(this.state.replay)
     if (!currEmail) return <div>'loading...'</div>
 
     return <div className="email-container">
@@ -39,7 +37,7 @@ export class EmailDetails extends React.Component {
         <div className="email-replay"> Replay : {currEmail.replays}</div>
         <div className="inputs-container">
           <textarea value={this.state.replay} onChange={(ev) => this.setState({ replay: ev.target.value })} required placeholder="Replay Messege" name="textarea" rows="20" cols="100" >Write something here</textarea>
-          <button className="comment-button" onClick={this.onAddComment}>Replay</button>
+          <button className="comment-button" onClick={this.onAddComment}>Replay <span className="right-arrow">➡</span>  </button>
           {/* <button onClick={this.onDeleteMail} className="delete-email">Delete Email</button> */}
           <Link className="add-note" to={`/notes/add/${currEmail.subject}/${currEmail.body}`}>To Notes</Link>
         </div>

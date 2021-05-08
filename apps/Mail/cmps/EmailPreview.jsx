@@ -7,7 +7,6 @@ export function EmailPreview({ email, onDeleteMail }) {
 
     function onEmailClicked() {
         mailService.isEmailRead(email.id)
-        console.log('asd');
     }
     function onAddStar(ev) {
         mailService.addStar(email.id, email.isStar)

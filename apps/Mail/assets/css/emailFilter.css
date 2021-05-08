@@ -23,5 +23,6 @@
     align-items: center;
     background-color: var(--white);
     border-radius: 5px;
-    margin-top: 0.8%;
+    /* margin-top: 0.8%; */
+    border-bottom: 1px solid black;
 }

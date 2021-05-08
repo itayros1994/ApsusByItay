@@ -83,3 +83,88 @@
 .pinned:hover {
     background-color: grey;
 }
+
+.hamburger {
+    display: none;
+}
+
+.stared-mailes-topic {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 5px;
+}
+
+.back-inbox-fromstars {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+
+.stars-menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-around;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: 13px;
+}
+
+@media screen and (max-width: 780px) {
+    .open {
+        display: block;
+        display: flex;
+        /* transition: 5s; */
+        flex-direction: column;
+        position: absolute;
+        background-color: rgb(59, 53, 53);
+        top: -13px;
+        left: 0px;
+        z-index: 1;
+        color: white;
+        height: 600px;
+        padding-top: 52px;
+    }
+    .close {
+        display: none;
+    }
+    .email-main-container {
+        position: relative;
+    }
+    .hamburger {
+        display: block;
+        z-index: 2;
+        color: white;
+        font-size: 30px;
+        top: -11px;
+        position: absolute;
+        left: 47px;
+        font-size: 37px;
+    }
+    .hamburger-open {
+        color: white
+    }
+    .hamburger-close {
+        color: black;
+        font-size: 37px;
+    }
+    .inbox {
+        background-color: white;
+    }
+    .stared {
+        background-color: white;
+    }
+    .mail-filter-container {
+        margin-top: 15px;
+    }
+    .back-mailbox {
+        display: none;
+    }
+    .email-list-container {
+        width: 100%;
+        margin: 1px;
+    }
+    .new-messege {
+        font-weight: bold;
+        color: green;
+    }
+}
