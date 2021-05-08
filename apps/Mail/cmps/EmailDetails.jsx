@@ -39,7 +39,7 @@ export class EmailDetails extends React.Component {
         <div className="inputs-container">
           <textarea value={this.state.replay} onChange={(ev) => this.setState({ replay: ev.target.value })} required placeholder="Replay Messege" name="textarea" rows="20" cols="100" >Write something here</textarea>
           <button className="comment-button" onClick={this.onAddComment}>Replay</button>
-          <button onClick={this.onDeleteMail} className="delete-email">❌</button>
+          <button onClick={this.onDeleteMail} className="delete-email">Delete Email</button>
         </div>
       </section>
     </div>

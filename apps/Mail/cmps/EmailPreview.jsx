@@ -9,7 +9,7 @@ export function EmailPreview({ email, onDeleteMail }) {
         mailService.isEmailRead(email.id)
         console.log('asd');
     }
-    function onAddStar() {
+    function onAddStar(ev) {
         mailService.addStar(email.id, email.isStar)
     }
 
@@ -18,13 +18,16 @@ export function EmailPreview({ email, onDeleteMail }) {
         <div className="email-preview-container">
             <Link onClick={onEmailClicked} to={`/mail/${email.id}`}>
                 <div className={email.isRead ? "email-content" : "email-content email-read-bgc"} >
+                    <div className="sendby-subject-container">
                     <div className="email-send-by"><span className="from">From : </span>{email.sendBy}</div>
                     <div className="email-subject"><span className="email-subject-prev">{email.subject}</span> : <span className="email-body-prev">{email.body.substring(0, 10)}</span></div>
-                    <div className="email-sentAt">{email.sentAt}</div>
+                    </div>
                     {/* <Link onClick={onEmailClicked} to={`/mail/${email.id}`}>Read Email</Link> */}
-                    <div>
+                    <div className="email-prev-menu">
+                        <div className={email.isRead ? "old-messege" : "new-messege"}>New Email</div>
+                    <span className="email-sentAt">{email.sentAt}</span>
                         <span className="read-sign">{email.isRead ? '✔' : '📩'}</span>
-                        <button className="email-star" onClick={onAddStar}>{email.isStar ? '⭐' : '➕'}</button>
+                       <button className="email-star" onClick={onAddStar}>{email.isStar ? '⭐' : '➕'}</button>
                         <button onClick={() => onDeleteMail(email.id)}>❌</button>
                     </div>
 

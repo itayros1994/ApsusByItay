@@ -14,7 +14,6 @@ export class EmailCompose extends React.Component {
     }
 
     render() {
-        console.log(this.state);
         const { sendBy, title, body } = this.state
         return <div>
         

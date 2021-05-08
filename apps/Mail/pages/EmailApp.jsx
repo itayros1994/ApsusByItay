@@ -1,13 +1,13 @@
 const { Route, Switch } = ReactRouterDOM
 import { EmailPreview } from '../cmps/EmailPreview.jsx'
 import { mailService } from '../services/mailService.js'
-import { EmailDetails } from './EmailDetails.jsx'
+import { EmailDetails } from '../cmps/EmailDetails.jsx'
 import { EmailFilter } from '../cmps/EmailFilter.jsx'
 import { EmailList } from '../cmps/EmailList.jsx'
 import { EmailStatus } from '../cmps/EmailStatus.jsx'
 import { EmailCompose } from '../cmps/EmailCompose.jsx'
 import { SideBar } from '../cmps/SideBar.jsx'
-import { EmailStars } from '../cmps/SideBar.jsx'
+import { EmailStars } from '../cmps/EmailStars.jsx'
 
 export class EmailApp extends React.Component {
 
@@ -18,7 +18,6 @@ export class EmailApp extends React.Component {
 
     componentDidMount() {
         this.loadMails()
-        console.log(this.state.emails)
     }
     componentDidUpdate() {
         if (!this.state.emails)
@@ -49,8 +48,9 @@ export class EmailApp extends React.Component {
                 <div className="actions-list-container">
                     <EmailFilter onSetFilter={this.onSetFilter} />
                     <Switch>
+                        {/* <Route component={EmailStars} path="/stars" /> */}
                         <Route component={EmailDetails} path="/mail/:emailId" />
-                        <Route component={EmailStars} path="/mail/stars" />
+                        
                         <EmailList onDeleteMail={this.onDeleteMail} emails={this.state.emails}></EmailList>
                     </Switch>
 
