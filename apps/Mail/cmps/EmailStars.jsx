@@ -26,7 +26,7 @@ export class EmailStars extends React.Component {
     }
 
     render() {
-        const emails = this.state.emails.filter(email => email.isRead)
+        const emails = this.state.emails.filter(email => email.isStar)
         return <div>{<EmailList onDeleteMail={this.onDeleteMail} emails={emails}/>}</div>
     }
 

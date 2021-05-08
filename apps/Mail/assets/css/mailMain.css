@@ -9,7 +9,7 @@
 /* Add Mail Section */
 
 .email-main-container {
-    background-color: rgb(198, 222, 253);
+    /* background-color: rgba(177, 204, 238, 0.705); */
     display: flex;
     height: 100%;
     background-repeat: no-repeat;

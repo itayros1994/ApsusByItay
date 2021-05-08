@@ -28,8 +28,8 @@
 
 .email-compose {
     font-size: 15px;
-    border: black 5px solid;
-    color: #eee;
+    border: black 1px solid;
+    /* color: #eee; */
     border-radius: 20px;
     margin: 10px;
     padding: 10px;
@@ -37,7 +37,12 @@
     font-family: Lato-Black;
 }
 
- :hover.email-compose {
-    background-color: rgb(119, 240, 230);
-    transition: 0.5s;
+.email-compose:hover {
+    background-color: var(--purple);
+    transition: 0.3s;
+    opacity: 75%;
+}
+
+.email-compose:hover a {
+    color: white !important;
 }

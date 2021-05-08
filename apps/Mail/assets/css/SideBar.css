@@ -3,10 +3,29 @@
     flex-direction: column;
     /* height: 100%; */
     margin: 10px;
-    border-right: 2px solid black;
     cursor: pointer;
-    background-color: white;
+    background-color: var(--white);
     border-radius: 5px;
+    border-right: 1px solid black;
+}
+
+.sidebar-container a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.sidebar-container .sidebar-link {
+    transition: background-color .3s;
+}
+
+.sidebar-container .sidebar-link:hover {
+    background-color: var(--purple);
+    opacity: 75%;
+}
+
+.sidebar-container .sidebar-link:hover div,
+.sidebar-container .sidebar-link:hover a {
+    color: #fff;
 }
 
 .inbox {
@@ -14,7 +33,7 @@
     height: 40px;
     margin: 10px;
     border-radius: 5%;
-    border: 1px solid black;
+    border: 1px solid var(--black);
     text-align: center;
     font-family: Lato-Black;
     border-radius: 4px;
@@ -36,7 +55,7 @@
     height: 40px;
     margin: 10px;
     border-radius: 5%;
-    border: 1px solid black;
+    border: 1px solid var(--black);
     text-align: center;
     font-family: Lato-Black;
     border-radius: 4px;

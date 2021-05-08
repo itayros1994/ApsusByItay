@@ -8,6 +8,7 @@ import { EmailStatus } from '../cmps/EmailStatus.jsx'
 import { EmailCompose } from '../cmps/EmailCompose.jsx'
 import { SideBar } from '../cmps/SideBar.jsx'
 import { EmailStars } from '../cmps/EmailStars.jsx'
+import { eventBusService } from '../../../services/event-bus-service.js'
 
 export class EmailApp extends React.Component {
 
@@ -15,13 +16,18 @@ export class EmailApp extends React.Component {
         emails: [],
         filterBy: null
     }
+    removeEvent;
 
     componentDidMount() {
         this.loadMails()
+        this.removeEvent = eventBusService.on('add-mail',this.loadMails())
     }
     componentDidUpdate() {
         if (!this.state.emails)
             this.loadMails()
+    }
+    componentWillUnmount(){
+        this.removeEvent()
     }
 
     loadMails() {

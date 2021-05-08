@@ -15,7 +15,7 @@
     align-items: center;
     width: 97%;
     height: 3.3rem;
-    background-color: rgba(255, 255, 255, 0.288);
+    background-color: rgba(197, 178, 178, 0.287);
     opacity: 70%;
     font-family: Helvetica, Arial, sans-serif;
     border-radius: 5px;
@@ -53,7 +53,7 @@
 
 .email-perv-cont {
     margin: auto;
-    border-left: solid black 4px;
+    border-left: solid var(--black) 4px;
 }
 
 .email-read-bgc {
@@ -75,6 +75,10 @@
 
 .old-messege {
     display: none;
+}
+
+.grey-star {
+    filter: grayscale(100%);
 }
 
 @media screen and (max-width: 780px) {

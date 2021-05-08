@@ -1,3 +1,4 @@
+import { eventBusService } from '../../../services/event-bus-service.js'
 import { mailService } from '../services/mailService.js'
 
 export class EmailCompose extends React.Component {
@@ -9,17 +10,20 @@ export class EmailCompose extends React.Component {
     }
 
     componentDidMount() {
-        const {subject, body } = this.props.match.params
-        console.log('stam');
+        const { subject, body } = this.props.match.params
         if (body) {
-            this.setState({body,title:subject})
+            this.setState({ body, title: subject })
             // this.setState({subject})
         }
     }
 
     onAddMail(sendBy, title, body) {
         mailService.addMail(sendBy, title, body)
-        this.props.history.push('/mail')
+            .then(() => {
+                eventBusService.emit('add-mail')
+                this.props.history.push('/mail')
+            }
+)
     }
 
     render() {

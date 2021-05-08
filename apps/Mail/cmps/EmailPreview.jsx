@@ -27,7 +27,7 @@ export function EmailPreview({ email, onDeleteMail }) {
                         <div className={email.isRead ? "old-messege" : "new-messege"}>New Email</div>
                     <span className="email-sentAt">{email.sentAt}</span>
                         <span className="read-sign">{email.isRead ? '✔' : '📩'}</span>
-                       <button className="email-star" onClick={onAddStar}>{email.isStar ? '⭐' : '➕'}</button>
+                       <button className="email-star" onClick={onAddStar}>{email.isStar ? '⭐' : <span className="grey-star">⭐</span>}</button>
                         <button onClick={() => onDeleteMail(email.id)}>❌</button>
                     </div>
 
