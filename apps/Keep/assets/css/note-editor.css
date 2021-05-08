@@ -62,6 +62,10 @@
   content: "\f0c5";
 }
 
+.note-editor-mail::before {
+  content: "\f658";
+}
+
 .note-editor-delete::before {
   content: "\f1f8";
 }

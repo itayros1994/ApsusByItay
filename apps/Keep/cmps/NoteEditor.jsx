@@ -43,6 +43,12 @@ export class _NoteEditor extends React.Component {
             })
     }
 
+    onSendAsMail = (nId) => {
+        const subject = noteService.getNoteTitle(nId)
+
+        console.log(subject)
+    }
+
     onDeleteNote = (nId) => {
         noteService.deleteNote(nId)
             .then(() => {
@@ -58,18 +64,20 @@ export class _NoteEditor extends React.Component {
             <div className="note-editor-container">
                 <span className="note-editor-type-symbol">{this.getNoteSymbol()}</span>
 
-                <span className="note-editor-pin pointer">
+                <span className="pointer note-editor-pin" title="Toggle pin note">
                     <img src={isPinned ? "./apps/Keep/assets/img/unpin.png" : "./apps/Keep/assets/img/pin.png"}
                         onClick={() => { this.onTogglePin(id) }} />
                 </span>
 
-                <span className="fas note-editor-color-picker" style={{ color: style.backgroundColor }}>
-                    <input className="note-editor-hider pointer" type="color" onChange={(ev) => { this.onChangeBgcColor(id, ev.target.value) }} />
+                <span className="fas note-editor-color-picker" title="Change note background color" style={{ color: style.backgroundColor }}>
+                    <input className="pointer note-editor-hider" type="color" onChange={(ev) => { this.onChangeBgcColor(id, ev.target.value) }} />
                 </span>
 
-                <span className="fas note-editor-copy pointer" onClick={() => { this.onCopyToClipboard(id) }}></span>
+                <span className="fas pointer note-editor-copy" title="Copy note to clipboard" onClick={() => { this.onCopyToClipboard(id) }}></span>
 
-                <span className="fas note-editor-delete pointer" onClick={() => { this.onDeleteNote(id) }}></span>
+                <span className="fas pointer note-editor-mail" title="Send note as mail" onClick={() => { this.onSendAsMail(id) }}></span>
+
+                <span className="fas pointer note-editor-delete" title="Delete note" onClick={() => { this.onDeleteNote(id) }}></span>
             </div>
         )
     }

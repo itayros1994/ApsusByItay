@@ -15,6 +15,7 @@ export const noteService = {
     toggleCheckTodo,
     changeBgcColor,
     getNoteTxtToCopy,
+    getNoteTitle
 }
 
 function query(filterTxt, ctg) {
@@ -254,6 +255,27 @@ function getNoteTxtToCopy(nId) {
     return navigator.clipboard.writeText(copyTxt.join('\n') + '\n\nCopied from Appsus MissKeep')
 }
 
+function getNoteTitle(nId) {
+    const noteIdx = _getNoteIdxInNotes(nId)
+    const note = notes[noteIdx]
+    let subject;
+    switch (_getNoteType(noteIdx)) {
+        case 'NoteText':
+            subject = note.info.txt
+            break;
+        case 'NoteTodos':
+            subject = note.info.todos.label
+            break;
+        case 'NoteImg':
+            subject = note.info.title
+            break;
+        case 'NoteVideo':
+            subject = note.info.title
+            break;
+    }
+
+    return subject
+}
 
 function _saveNotesToStorage() {
     storageService.saveToStorage('notes', notes)

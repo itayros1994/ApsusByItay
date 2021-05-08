@@ -1,0 +1,78 @@
+.main-appsus-title {
+  font-size: 2rem;
+  font-family: Kanit-Bold;
+}
+
+.main-appsus-title::after {
+  content: ".";
+  color: var(--green);
+}
+
+.home-cards-container {
+  justify-content: center;
+  gap: 30px;
+  padding: 0 3rem;
+  margin: 0.5rem auto;
+  max-width: 800px;
+}
+
+.home-cards-container a {
+  text-decoration: none;
+}
+
+.app-card-container {
+  background-color: #d8d8d854;
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  box-shadow: -1px 1px 8px #bfbfbf;
+  overflow: hidden;
+  margin: 1rem auto;
+  max-width: 250px;
+}
+
+.app-card-title {
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+.app-card-container img {
+  width: 250px;
+  padding: 0.5rem;
+}
+
+.app-card-desc {
+  color: var(--black);
+  padding: 0.5rem;
+  text-align: justify;
+}
+
+.app-card-linker {
+  color: var(--black);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-block-end: 1rem;
+}
+
+.main-waves-container {
+  display: none;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 750px) {
+  .main-waves-container {
+    display: block;
+    position: absolute;
+    opacity: 0.5;
+    bottom: 1.8rem;
+    width: 100%;
+    z-index: -5;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .home-cards-container {
+    justify-content: space-between;
+  }
+}
