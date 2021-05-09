@@ -9,7 +9,7 @@ export function Home() {
                 <Link to="/mail">
                     <article className="app-card-container">
                         <div className="text-center app-card-title">Mail</div>
-                        <img src="../assets/img/home-svgs/mister-mail.svg" />
+                        <img src="./assets/img/home-svgs/mister-mail.svg" />
                         <div className="app-card-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel odio quidem mollitia. Itaque rem repudiandae pariatur voluptatibus magni in eveniet?</div>
                         <div className="text-center app-card-linker">Go mail!</div>
                     </article>
@@ -18,7 +18,7 @@ export function Home() {
                 <Link to="/notes">
                     <article className="app-card-container">
                         <div className="text-center app-card-title">Notes</div>
-                        <img src="../assets/img/home-svgs/miss-note.svg" />
+                        <img src="./assets/img/home-svgs/miss-note.svg" />
                         <div className="app-card-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel odio quidem mollitia. Itaque rem repudiandae pariatur voluptatibus magni in eveniet?</div>
                         <div className="text-center app-card-linker">Go notes!</div>
                     </article>
