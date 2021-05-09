@@ -8,7 +8,7 @@
 @import './font-awsome.css';
 @import './cmps/navbar.css';
 @import './cmps/footer.css';
-@import './cmps/notifications.css';
+/* @import './cmps/notifications.css'; */
 
 /* Keep css by Oren */
 @import '../../apps/Keep/assets/css/keep.css';
