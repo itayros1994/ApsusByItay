@@ -76,3 +76,40 @@
     justify-content: space-between;
   }
 }
+
+
+
+
+
+.user-ntf-container {
+  background-color: rgba(200, 200, 200, 0.8);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  padding: 0.5em;
+}
+
+.user-ntf-container::before{
+    content: "\f0f3";
+}
+
+.user-ntf-container:hover {
+  cursor: help;
+}
+
+.user-ntf-container::first-letter {
+  text-transform: uppercase;
+}
+
+.ntf-success {
+  background-color: #a2ea7b;
+}
+
+.ntf-update {
+  background-color: #f0e458;
+}
+
+.ntf-alarm{
+    background-color: #f35555;
+}
