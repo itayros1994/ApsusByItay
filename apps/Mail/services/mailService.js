@@ -58,7 +58,6 @@ export const mailService = {
     addStar
 
 }
-console.log(storageService.loadFromStorage(_LOCAL_STORAGE_KEY));
 
 // Load Mails If LocalSorage Is Clear
 if (storageService.loadFromStorage(_LOCAL_STORAGE_KEY) === null) {
