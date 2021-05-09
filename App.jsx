@@ -7,7 +7,7 @@ import { Home } from './pages/Home.jsx'
 import { Notes } from './apps/Keep/pages/NotesApp.jsx'
 import { AddNoteFromMail } from './apps/Keep/pages/AddNoteFromMail.jsx'
 // import { EmailDetails } from './apps/Mail/cmps/EmailDetails.jsx'
-import {EmailApp} from './apps/Mail/Pages/EmailApp.jsx'
+import {EmailApp} from './apps/Mail/pages/EmailApp.jsx'
 import {EmailCompose} from './apps/Mail/cmps/EmailCompose.jsx'
 import {EmailStars} from './apps/Mail/cmps/EmailStars.jsx'
  
